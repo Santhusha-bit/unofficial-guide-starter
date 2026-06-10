@@ -1,4 +1,4 @@
-SOURCE: Chip Huyen — "What I Learned from Looking at 200 Machine Learning Tools"
+SOURCE: Chip Huyen - "What I Learned from Looking at 200 Machine Learning Tools"
 URL: https://huyenchip.com/2020/06/22/mlops.html
 DATE: June 22, 2020
 
@@ -24,7 +24,7 @@ This is a huge opportunity. Good ML engineers who can put models into production
 
 CORE CHALLENGES REQUIRING TOOLS
 
-Monitoring: Detecting data distribution shifts after deployment. Models degrade silently — yesterday's good model can be today's terrible model if the data distribution changes.
+Monitoring: Detecting data distribution shifts after deployment. Models degrade silently - yesterday's good model can be today's terrible model if the data distribution changes.
 
 Data Labeling: Quick annotation and re-labeling workflows. Most ML projects spend 60-80% of time on data, not modeling.
 
@@ -80,9 +80,9 @@ The production gap is real: most ML courses teach you to train models. They do n
 Technical debt in ML: ML systems have all the usual software technical debt, plus ML-specific debt: data dependencies, pipeline jungles, unstable data-model boundaries, and feedback loops that can corrupt training data.
 
 The MLOps maturity spectrum:
-Level 0 — Manual: data scientists train models in notebooks, engineers manually deploy them. No automation, no monitoring. Common at early-stage startups.
-Level 1 — ML Pipeline Automation: automated retraining when new data arrives. Continuous model validation.
-Level 2 — CI/CD Pipelines: automated build, test, and deploy of the entire pipeline. Rare, even at large companies.
+Level 0 - Manual: data scientists train models in notebooks, engineers manually deploy them. No automation, no monitoring. Common at early-stage startups.
+Level 1 - ML Pipeline Automation: automated retraining when new data arrives. Continuous model validation.
+Level 2 - CI/CD Pipelines: automated build, test, and deploy of the entire pipeline. Rare, even at large companies.
 
 WHAT RECRUITERS LOOK FOR IN PRODUCTION ML ROLES
 

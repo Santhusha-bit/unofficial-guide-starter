@@ -1,4 +1,4 @@
-SOURCE: Andrej Karpathy — "A Survival Guide to a PhD"
+SOURCE: Andrej Karpathy - "A Survival Guide to a PhD"
 URL: https://karpathy.github.io/2016/09/07/phd/
 DATE: September 7, 2016
 
@@ -38,13 +38,13 @@ Picking the school. Your dream school should: 1) be a top school (because of fee
 
 ADVISER
 
-Student adviser relationship. The adviser is an extremely important person who will exercise a lot of influence over your PhD experience. The adviser-student relationship is a symbiosis — you have your own goals, but they also have their own goals, constraints and they're building their own career. It is very helpful to understand your adviser's incentive structures: how the tenure process works, how they are evaluated, how they get funding.
+Student adviser relationship. The adviser is an extremely important person who will exercise a lot of influence over your PhD experience. The adviser-student relationship is a symbiosis - you have your own goals, but they also have their own goals, constraints and they're building their own career. It is very helpful to understand your adviser's incentive structures: how the tenure process works, how they are evaluated, how they get funding.
 
 Pre-vs-post tenure. Younger faculty members will usually be around more and will usually be more hands-on. More senior faculty members may have larger labs and tend to have many other commitments (committees, talks, travel), which means they stay on a higher level of abstraction.
 
 Finding an adviser. The student-adviser relationship is sometimes referred to as a marriage. Talk to their students. If you want to get actual information this shouldn't be done in a very formal way. Ask specific questions: "how often do you meet?", "how hands on are they?"
 
-Impressing an adviser. The ideal student from their perspective is someone with interest and passion, someone who doesn't need too much hand-holding, someone who takes initiative — who shows up a week later having done not just what the adviser suggested, but who went beyond it.
+Impressing an adviser. The ideal student from their perspective is someone with interest and passion, someone who doesn't need too much hand-holding, someone who takes initiative - who shows up a week later having done not just what the adviser suggested, but who went beyond it.
 
 Consider the entire lab. You'll be seeing your adviser maybe once a week but you'll be seeing most of their students every single day. The postdocs are professors-in-training and they will likely be eager to work with you as they are trying to gain advising experience.
 
@@ -64,7 +64,7 @@ The person who did X. Ultimately, the goal of a PhD is to not only develop a dee
 
 Valuable skills. Recognize that during your PhD you will become an expert at the area of your choosing. Imagine yourself 5 years later being a world expert in this area. Are these skills exciting or potentially valuable to your future endeavors?
 
-Negative examples. You'll sometimes hear academics talk about "incremental work" — the worst adjective in academia. Incremental work enhances something existing by making it more complex and gets 2% extra on some benchmark. These papers won't go on to be highly cited.
+Negative examples. You'll sometimes hear academics talk about "incremental work" - the worst adjective in academia. Incremental work enhances something existing by making it more complex and gets 2% extra on some benchmark. These papers won't go on to be highly cited.
 
 Case study: my thesis. My entire thesis is based on work I did in the last 1.5 years of my PhD. It took me quite a long time to find a problem that I felt very excited to work on. Then at one point in my 3rd year I randomly stopped by Richard Socher's office on some Saturday at 2am and realized that some of his work on images and language was getting at something very interesting.
 
@@ -84,9 +84,9 @@ Identify the core contribution. Before you start writing anything, identify the 
 
 The structure. The default structure is: Intro, Related Work, Model, Experiments, Conclusions. Each paragraph should be organized around a single concrete point stated on the first sentence. A good intro flow: 1) X is an important problem, 2) The core challenges are this and that, 3) Previous work addressed these with Y but the problems are Z, 4) In this work we do W, 5) This has the following appealing properties.
 
-Common mistake: the laundry list. Avoid: "Here is the problem. First we do X, then we do Y, then we do Z." Each point should be justified, motivated, explained. Your paper is not a report — it is a highly processed and focused discussion of a problem.
+Common mistake: the laundry list. Avoid: "Here is the problem. First we do X, then we do Y, then we do Z." Each point should be justified, motivated, explained. Your paper is not a report - it is a highly processed and focused discussion of a problem.
 
-The language. You never "study" or "investigate" — you "develop" or "propose". You don't present a "system" or "pipeline" — you develop a "model". You don't learn "features" — you learn "representations".
+The language. You never "study" or "investigate" - you "develop" or "propose". You don't present a "system" or "pipeline" - you develop a "model". You don't learn "features" - you learn "representations".
 
 An internal deadline 2 weeks prior. Fei-Fei is quite adamant about an internal deadline 2 weeks before the due date in which you must submit at least a 5-page draft with all final experiments that goes through an internal review process identical to the external one.
 
@@ -100,7 +100,7 @@ GIVING TALKS
 
 The goal of a talk. The goal of your talk is not to tell your audience what you did in your paper. The goal is to: 1) get the audience really excited about the problem, 2) teach the audience something, and 3) entertain.
 
-Do: Lots of pictures. People love pictures. Make the talk actionable. Give a live demo if possible. Develop a broader intellectual arch. Develop it into a story. Cite, cite, cite — a lot!
+Do: Lots of pictures. People love pictures. Make the talk actionable. Give a live demo if possible. Develop a broader intellectual arch. Develop it into a story. Cite, cite, cite - a lot!
 
 Don't: Don't crowd your slides with text. There should be very few or no bullet points.
 

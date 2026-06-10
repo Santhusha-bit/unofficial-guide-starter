@@ -1,4 +1,4 @@
-SOURCE: Community-compiled guide — "Getting Into ML Research as an Undergrad or Self-Learner"
+SOURCE: Community-compiled guide - "Getting Into ML Research as an Undergrad or Self-Learner"
 BASED ON: r/MachineLearning discussions, fast.ai community forums, ML Collective resources, practitioner advice aggregated from multiple sources
 TOPICS: Finding research opportunities, cold-emailing, prerequisites, research vs. engineering
 
@@ -16,9 +16,9 @@ Essential foundations:
 - Linear algebra: matrix multiplication, eigendecomposition, SVD, vector spaces. Resource: Gilbert Strang's lectures (freely available on MIT OpenCourseWare) or 3Blue1Brown's Essence of Linear Algebra series.
 - Calculus: chain rule (that's 80% of what backprop uses), partial derivatives, gradients. If you understand the chain rule, you understand how neural networks learn.
 - Probability and statistics: Bayes' theorem, probability distributions (Gaussian, Bernoulli, categorical), expectation, variance, maximum likelihood estimation.
-- A bit of information theory: entropy, KL divergence — these appear constantly in loss functions and information-theoretic arguments.
+- A bit of information theory: entropy, KL divergence - these appear constantly in loss functions and information-theoretic arguments.
 
-What you don't immediately need: real analysis, measure theory, abstract algebra, topology — these matter for specific theoretical research but not for most applied ML work.
+What you don't immediately need: real analysis, measure theory, abstract algebra, topology - these matter for specific theoretical research but not for most applied ML work.
 
 Practical approach: learn math concepts as you need them. When you hit a paper with a concept you don't understand, go learn that concept. Don't try to front-load all of mathematics before touching research.
 
@@ -46,16 +46,16 @@ Cold-emailing professors is the most reliable path. Here's how to not get ignore
 
 What to include in a cold email:
 1. Subject line: specific, not generic. "Interested in your work on [specific paper/topic]" beats "Research Opportunity Inquiry"
-2. First paragraph: mention a specific paper of theirs you've read and what specifically interested you. Be genuine — professors can tell when you haven't actually read the work.
+2. First paragraph: mention a specific paper of theirs you've read and what specifically interested you. Be genuine - professors can tell when you haven't actually read the work.
 3. Second paragraph: your background briefly. GPA if high, relevant coursework, any projects.
 4. Third paragraph: what you want. "I would love to discuss potential research opportunities in your lab."
 5. Attachment: resume/CV, optionally a transcript.
 
 Length: 3-4 paragraphs maximum. Professors get hundreds of emails. Respect their time.
 
-Do: send to multiple professors (don't mention this in the email). Do: follow up once after 2 weeks if no response. Don't: ask in the first email if they have "any projects you need help with" — too generic. Don't: attach long personal statements — save that for formal applications.
+Do: send to multiple professors (don't mention this in the email). Do: follow up once after 2 weeks if no response. Don't: ask in the first email if they have "any projects you need help with" - too generic. Don't: attach long personal statements - save that for formal applications.
 
-Template approach: Yes, you'll be emailing many professors. But customize the first paragraph for each professor — this is what gets responses. The rest can be templated.
+Template approach: Yes, you'll be emailing many professors. But customize the first paragraph for each professor - this is what gets responses. The rest can be templated.
 
 When to apply: late September/early October for spring semester research. Late January/February for summer. Professors plan funding 1-2 months ahead.
 
@@ -70,7 +70,7 @@ Major lab internships:
 - Facebook/Meta AI Research: slightly more accessible
 - Industry research labs sometimes have "student researcher" positions for strong undergrads
 
-Important: even a rejection from a top lab's research intern position can be valuable — you learn what the bar is and what to work toward.
+Important: even a rejection from a top lab's research intern position can be valuable - you learn what the bar is and what to work toward.
 
 BUILDING YOUR RESEARCH PROFILE WITHOUT A LAB
 
@@ -113,7 +113,7 @@ The best letters: "I worked closely with this student for 1 year on a research p
 
 How to get these letters:
 - Start research early (sophomore or junior year)
-- Demonstrate initiative — go beyond what's assigned
+- Demonstrate initiative - go beyond what's assigned
 - Produce something tangible (code, a paper draft, a result the professor cares about)
 - Ask for the letter at least 1 month in advance
 - Give your recommenders everything they need: your CV, your statement, the deadline, the submission link
@@ -126,10 +126,10 @@ Q: Do I need to have read all the foundational papers before starting research?
 A: No. Read what you need for your specific project. Learn as you go. Foundational reading can happen in parallel with doing research.
 
 Q: How do I know if I'm ready to do research?
-A: You're probably ready sooner than you think. Discomfort with uncertainty is normal — it's the defining feature of research, not a sign you're not ready.
+A: You're probably ready sooner than you think. Discomfort with uncertainty is normal - it's the defining feature of research, not a sign you're not ready.
 
 Q: What if my research leads nowhere?
 A: That's research. Negative results are still results. What matters for applications is what you learned, how you worked through it, and your ability to reflect on what went wrong.
 
 Q: Should I take a research-focused grad school track or go to industry first?
-A: Both paths work. Going to industry first (2-3 years) often makes you a stronger PhD applicant — you understand what problems matter in production, you have funding if you need it, and you have perspective. The "industry → PhD" path is common and respected.
+A: Both paths work. Going to industry first (2-3 years) often makes you a stronger PhD applicant - you understand what problems matter in production, you have funding if you need it, and you have perspective. The "industry → PhD" path is common and respected.

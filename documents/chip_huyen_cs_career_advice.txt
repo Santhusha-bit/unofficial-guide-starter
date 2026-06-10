@@ -1,4 +1,4 @@
-SOURCE: Chip Huyen — "Career Advice for Recent Computer Science Graduates"
+SOURCE: Chip Huyen - "Career Advice for Recent Computer Science Graduates"
 URL: https://huyenchip.com/2018/10/08/career-advice-recent-cs-graduates.html
 DATE: October 8, 2018
 
@@ -6,7 +6,7 @@ DATE: October 8, 2018
 
 Career Advice for Recent Computer Science Graduates
 
-Ever since graduation, people have been asking me: "What's now?" School did little to prepare me for the post-school world. The academic environment provides continual feedback — you go off track a little and somebody is sure to let you know. In the real world, you can make a series of wrong decisions and nobody will tell you until it's too late.
+Ever since graduation, people have been asking me: "What's now?" School did little to prepare me for the post-school world. The academic environment provides continual feedback - you go off track a little and somebody is sure to let you know. In the real world, you can make a series of wrong decisions and nobody will tell you until it's too late.
 
 For many recent grads with CS degrees, the question is less about "what job can I get" and more about "what job should I get." I spent the last year bothering many people in industry and academia with these questions, and I've been lucky that some of them were kind enough to share their insights.
 
@@ -41,7 +41,7 @@ Two pieces of advice I found helpful:
 
 1. "Which one gives you a once-in-a-lifetime opportunity?" Do you believe that the startup you're considering is working on something truly important? Or do you believe that working for a tech giant is your once-in-a-lifetime opportunity?
 
-2. "What are you optimizing for?" Some optimize for money, new experiences, prestige, or personal growth. At this stage in my life, I optimize for personal growth — a job that gives me the most freedom to grow, work with great colleagues/mentors, and challenge myself.
+2. "What are you optimizing for?" Some optimize for money, new experiences, prestige, or personal growth. At this stage in my life, I optimize for personal growth - a job that gives me the most freedom to grow, work with great colleagues/mentors, and challenge myself.
 
 SHOULD I DO MY OWN STARTUP?
 
@@ -102,7 +102,7 @@ ON CHOOSING NVIDIA (AND LESSONS FOR CHOOSING ANY COMPANY)
 
 Key factors I used when choosing where to work full-time:
 
-The culture: Look for companies where the culture fits your working style. NVIDIA's "speed of light" (SOL) tenet — you have to move fast, much faster than a regular big organization — matched how I wanted to work. Look at how flat the hierarchy is and whether you can reach people across the company.
+The culture: Look for companies where the culture fits your working style. NVIDIA's "speed of light" (SOL) tenet - you have to move fast, much faster than a regular big organization - matched how I wanted to work. Look at how flat the hierarchy is and whether you can reach people across the company.
 
 The work: Can you choose what you work on? Are you the owner of projects or just a small piece? Can you work across teams?
 

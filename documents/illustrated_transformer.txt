@@ -1,4 +1,4 @@
-SOURCE: Jay Alammar — "The Illustrated Transformer"
+SOURCE: Jay Alammar - "The Illustrated Transformer"
 URL: https://jalammar.github.io/illustrated-transformer/
 DATE: June 27, 2018
 
@@ -44,7 +44,7 @@ MULTI-HEADED ATTENTION
 
 The architecture uses eight attention heads rather than single attention. Each head maintains separate Query/Key/Value weight matrices, allowing the model to focus on different positions and representation subspaces simultaneously. Outputs concatenate and pass through an additional weight matrix (W_o).
 
-This enables the model to track multiple relationships simultaneously — for example, recognizing that "it" relates to both "animal" and "tired" in different attention heads. Think of it as having eight different "perspectives" on the same sentence.
+This enables the model to track multiple relationships simultaneously - for example, recognizing that "it" relates to both "animal" and "tired" in different attention heads. Think of it as having eight different "perspectives" on the same sentence.
 
 POSITIONAL ENCODING
 
@@ -87,7 +87,7 @@ WHY TRANSFORMERS REPLACED RNNS
 
 1. Parallelization: RNNs must process tokens sequentially; transformers process all tokens at once, enabling massive speedups with modern GPUs.
 2. Long-range dependencies: attention directly connects any two positions in a sequence regardless of distance, while RNNs struggle to propagate information over long sequences.
-3. Scalability: transformers scale better — more parameters + more data = better performance, leading to GPT, BERT, and beyond.
+3. Scalability: transformers scale better - more parameters + more data = better performance, leading to GPT, BERT, and beyond.
 
 LEARNING RESOURCES
 

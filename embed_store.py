@@ -1,5 +1,5 @@
 """
-Milestone 4 — Embedding and vector store (ChromaDB).
+Milestone 4 - Embedding and vector store (ChromaDB).
 """
 from pathlib import Path
 import chromadb

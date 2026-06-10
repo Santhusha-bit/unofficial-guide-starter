@@ -1,4 +1,4 @@
-SOURCE: Sebastian Ruder — "An Overview of Gradient Descent Optimization Algorithms"
+SOURCE: Sebastian Ruder - "An Overview of Gradient Descent Optimization Algorithms"
 URL: https://www.ruder.io/optimizing-gradient-descent/
 DATE: January 19, 2016 (updated 2018)
 
@@ -69,7 +69,7 @@ Adapts the learning rate per parameter based on historical gradients. Parameters
 
 θ_{t+1,i} = θ_{t,i} - (η/√(G_{t,ii} + ε)) · g_{t,i}
 
-Where G_t is a diagonal matrix containing accumulated squared gradients. Works well for sparse data (e.g., NLP tasks). Major problem: accumulated squared gradients cause learning rates to shrink continuously, eventually becoming infinitesimally small — the network stops learning.
+Where G_t is a diagonal matrix containing accumulated squared gradients. Works well for sparse data (e.g., NLP tasks). Major problem: accumulated squared gradients cause learning rates to shrink continuously, eventually becoming infinitesimally small - the network stops learning.
 
 Adadelta
 
@@ -117,7 +117,7 @@ More stable than Adam in some settings.
 
 Nadam
 
-Combines Nesterov momentum with Adam — provides look-ahead benefits while maintaining adaptive learning rates.
+Combines Nesterov momentum with Adam - provides look-ahead benefits while maintaining adaptive learning rates.
 
 AMSGrad
 

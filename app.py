@@ -1,5 +1,5 @@
 """
-Milestone 5 — Gradio chat interface for the ML Research Onboarding Guide.
+Milestone 5 - Gradio chat interface for the ML Research Onboarding Guide.
 
 Usage:
     1. python build_index.py   (first time only)
@@ -42,7 +42,7 @@ demo = gr.ChatInterface(
     fn=chat,
     title="The Unofficial ML Research Guide",
     description=(
-        "Ask anything about breaking into AI/ML research — reading papers, "
+        "Ask anything about breaking into AI/ML research - reading papers, "
         "understanding architectures, finding advisors, or navigating the research world."
     ),
     examples=[

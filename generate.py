@@ -1,5 +1,5 @@
 """
-Milestone 5 — Answer generation via Groq.
+Milestone 5 - Answer generation via Groq.
 """
 import os
 from dotenv import load_dotenv
@@ -15,7 +15,7 @@ self-learners navigate the AI/ML research world using the provided context.
 
 Rules:
 - Answer based primarily on the provided context.
-- Be specific and practical — avoid vague generic advice.
+- Be specific and practical - avoid vague generic advice.
 - Cite sources by filename when you draw from them.
 - If the context does not contain enough information to answer, say so clearly rather \
 than making things up.\

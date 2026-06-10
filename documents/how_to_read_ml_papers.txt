@@ -1,4 +1,4 @@
-SOURCE: Community-compiled guide — "How to Read ML Research Papers"
+SOURCE: Community-compiled guide - "How to Read ML Research Papers"
 BASED ON: S. Keshav's "How to Read a Paper" (2007) + ML community practice from r/MachineLearning, fast.ai forums, and practitioner blogs
 TOPICS: Paper reading strategies, finding papers, staying current with the literature
 
@@ -6,7 +6,7 @@ TOPICS: Paper reading strategies, finding papers, staying current with the liter
 
 How to Read ML Research Papers
 
-Reading research papers is a skill that takes deliberate practice. Most beginners try to read papers like textbooks — front to back, every word. This is inefficient. Researchers use structured approaches that let them quickly assess relevance and extract key ideas.
+Reading research papers is a skill that takes deliberate practice. Most beginners try to read papers like textbooks - front to back, every word. This is inefficient. Researchers use structured approaches that let them quickly assess relevance and extract key ideas.
 
 THE THREE-PASS METHOD (S. Keshav, 2007)
 
@@ -48,7 +48,7 @@ Pass 3: Virtual Re-implementation (4–5 hours, for important papers only)
 Goal: Understand the paper deeply enough that you could re-implement it.
 
 - Identify every assumption the authors make
-- Challenge every claim — could you have done it differently?
+- Challenge every claim - could you have done it differently?
 - Think about how you would approach the same problem
 - Identify the paper's strong and weak points
 - Note ideas for future work
@@ -60,14 +60,14 @@ ADAPTED THREE-PASS METHOD FOR ML PAPERS
 ML papers have a specific structure. Apply the passes as follows:
 
 Pass 1 (10 minutes):
-- Read abstract carefully — ML abstracts usually state the problem, method, and key result numbers
+- Read abstract carefully - ML abstracts usually state the problem, method, and key result numbers
 - Read intro and conclusion
 - Look at all figures and their captions
 - Check: What dataset? What baseline? What metric? What's the improvement?
 
 Pass 2 (1 hour):
-- Read methods section carefully — this is where the actual contribution is
-- Read experiments section — focus on ablation studies (these show what actually matters)
+- Read methods section carefully - this is where the actual contribution is
+- Read experiments section - focus on ablation studies (these show what actually matters)
 - Pay attention to experimental setup: how comparable is this to your problem?
 - Read related work to understand the paper's position in the literature
 
@@ -143,13 +143,13 @@ Read at Pass 1 level only:
 UNDERSTANDING PAPERS YOU FIND HARD
 
 Strategies when stuck:
-1. Check if a blog post explains it (Distill.pub, Jay Alammar's blog, Lilian Weng's blog — lilianweng.github.io)
+1. Check if a blog post explains it (Distill.pub, Jay Alammar's blog, Lilian Weng's blog - lilianweng.github.io)
 2. Watch a video explanation (Yannic Kilcher on YouTube explains recent papers)
 3. Find a university course that covers it (Stanford's CS229, CS231n, CS224n lecture notes)
-4. Find related papers — sometimes a follow-up paper explains the original more clearly
+4. Find related papers - sometimes a follow-up paper explains the original more clearly
 5. Ask in ML Discord communities (Eleuther AI, HuggingFace, fast.ai forums)
 
-When you finally understand a hard paper, write a summary for yourself. You'll forget the details — the summary is what lasts.
+When you finally understand a hard paper, write a summary for yourself. You'll forget the details - the summary is what lasts.
 
 COMMON BEGINNER MISTAKES
 

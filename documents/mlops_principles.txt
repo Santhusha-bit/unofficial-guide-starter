@@ -1,4 +1,4 @@
-SOURCE: ML-Ops.org — "MLOps Principles"
+SOURCE: ML-Ops.org - "MLOps Principles"
 URL: https://ml-ops.org/content/mlops-principles
 AUTHORS: Dr. Larysa Visengeriyeva, Anja Kammer, Isabel Bär, Alexander Kniesz, Michael Plöd
 LICENSE: Creative Commons Attribution 4.0
@@ -11,24 +11,24 @@ MLOps establishes best practices for testing, deploying, managing, and monitorin
 
 THREE PHASES OF MLOPS
 
-Phase 1 — Designing the ML-powered Application:
+Phase 1 - Designing the ML-powered Application:
 Focuses on business understanding, data understanding, and solution design. Teams identify use cases, assess project viability, examine available data, and specify functional and non-functional requirements.
 
-Phase 2 — ML Experimentation and Development:
+Phase 2 - ML Experimentation and Development:
 Validates ML applicability through proof-of-concept implementations. Teams iteratively identify suitable algorithms, perform data engineering, and build models with stable quality suitable for production deployment.
 
-Phase 3 — ML Operations:
+Phase 3 - ML Operations:
 Focuses on production delivery using established DevOps practices including testing, versioning, continuous delivery, and monitoring.
 
 THREE LEVELS OF ML AUTOMATION MATURITY
 
-Level 0 — Manual Process:
+Level 0 - Manual Process:
 Data scientists execute every step manually, typically using Jupyter Notebooks. This experimental, iterative approach is typical for initial ML implementations. Common at early-stage startups or for first-time ML projects.
 
-Level 1 — ML Pipeline Automation:
+Level 1 - ML Pipeline Automation:
 Model training executes automatically when new data arrives. Includes continuous model retraining and data/model validation steps. The training pipeline is automated; deployment may still be manual.
 
-Level 2 — CI/CD Pipeline Automation:
+Level 2 - CI/CD Pipeline Automation:
 Automated systems build, test, and deploy data, models, and training pipelines. This represents the highest automation maturity. Rare even at large tech companies.
 
 MLOps SETUP COMPONENTS (for Level 1+)
@@ -68,7 +68,7 @@ Complete ML testing encompasses three scopes:
 
 Features and Data Tests:
 - Data validation checking schema and domain compliance (column types, value ranges)
-- Feature importance testing — do your features actually have predictive power?
+- Feature importance testing - do your features actually have predictive power?
 - Privacy/policy compliance (GDPR compliance, no PII leakage)
 - Unit tests for feature creation code
 
@@ -103,7 +103,7 @@ Production monitoring requires continuous oversight:
 - Dependency changes (new package versions that could change model behavior)
 - Data schema validation (is incoming data still the right format?)
 - Consistent feature computation between training and serving environments
-- Numerical stability (NaN/infinity detection — these silently corrupt predictions)
+- Numerical stability (NaN/infinity detection - these silently corrupt predictions)
 - Computational performance (latency, throughput, memory)
 - Model staleness measurement (time since last retraining)
 - Prediction quality degradation detection (precision, recall, F1 decline)

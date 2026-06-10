@@ -1,4 +1,4 @@
-SOURCE: Chris Olah & Shan Carter — "Attention and Augmented Recurrent Neural Networks"
+SOURCE: Chris Olah & Shan Carter - "Attention and Augmented Recurrent Neural Networks"
 URL: https://distill.pub/2016/augmented-rnns/
 JOURNAL: Distill, 2016
 
@@ -50,13 +50,13 @@ Training adds a "ponder cost" penalizing computational resource usage, encouragi
 
 4. Neural Programmer
 
-Neural Programmers learn to generate programs solving tasks without requiring program examples — only task outputs. Operations form Unix pipe-like sequences where each operation works on prior operation outputs.
+Neural Programmers learn to generate programs solving tasks without requiring program examples - only task outputs. Operations form Unix pipe-like sequences where each operation works on prior operation outputs.
 
 The controller RNN outputs probability distributions over operations at each step. Instead of selecting discrete operations (which would be non-differentiable), all operations execute with weights matching their probabilities, with outputs averaged together. The system references constants and column names through attention-based pointer mechanisms.
 
 UNDERLYING PRINCIPLE: ATTENTION
 
-The fundamental innovation connecting all augmentation approaches is attention — making discrete choices differentiable by "taking every direction at a fork, and then merging the paths back together."
+The fundamental innovation connecting all augmentation approaches is attention - making discrete choices differentiable by "taking every direction at a fork, and then merging the paths back together."
 
 Rather than:
 - Writing to memory position 3 (discrete, non-differentiable)

@@ -1,4 +1,4 @@
-SOURCE: Stanford CS231n — "Transfer Learning"
+SOURCE: Stanford CS231n - "Transfer Learning"
 URL: https://cs231n.github.io/transfer-learning/
 COURSE: CS231n: Deep Learning for Computer Vision, Stanford University
 
@@ -14,13 +14,13 @@ THREE MAJOR TRANSFER LEARNING SCENARIOS
 
 Remove the final fully-connected classification layer from a pretrained network and use the remaining layers to generate features (called "CNN codes"). For AlexNet, this produces 4096-dimensional vectors for each image. Train a linear classifier (SVM or Softmax) on these extracted features for your new dataset.
 
-The intuition: the pretrained network has learned to extract useful visual features. You don't need to retrain that — just retrain the final classifier to map those features to your new classes.
+The intuition: the pretrained network has learned to extract useful visual features. You don't need to retrain that - just retrain the final classifier to map those features to your new classes.
 
 2. Fine-tuning the ConvNet
 
 Replace and retrain the final classifier while continuing backpropagation through the pretrained network. You can fine-tune all layers or keep earlier layers frozen ("frozen layers") to prevent overfitting on small datasets.
 
-Why freeze early layers? Early layers capture generic features like edge detectors and color blobs — these are useful for almost any vision task. Later layers become increasingly specialized to the original dataset's classes, so those are more worth retraining.
+Why freeze early layers? Early layers capture generic features like edge detectors and color blobs - these are useful for almost any vision task. Later layers become increasingly specialized to the original dataset's classes, so those are more worth retraining.
 
 Use smaller learning rates for pretrained weights versus newly initialized layers. This preserves the learned representations while allowing adaptation.
 
@@ -32,7 +32,7 @@ DECISION FRAMEWORK: WHEN TO FINE-TUNE
 
 The choice depends on two factors: (1) the size of your new dataset, and (2) its similarity to the original training data.
 
-Small dataset + Similar to original: Train only the linear classifier on top. Don't fine-tune the ConvNet — risk of overfitting.
+Small dataset + Similar to original: Train only the linear classifier on top. Don't fine-tune the ConvNet - risk of overfitting.
 
 Large dataset + Similar to original: Fine-tune the entire network. More data means less overfitting risk, and the similarity means lower-level features transfer well.
 
@@ -46,7 +46,7 @@ Use smaller learning rates when fine-tuning. A common heuristic: 10x smaller tha
 
 Data augmentation is especially important when your dataset is small: random crops, flips, color jitter, etc.
 
-Monitor both training and validation loss carefully. If validation loss diverges from training loss early, you're overfitting — consider freezing more layers.
+Monitor both training and validation loss carefully. If validation loss diverges from training loss early, you're overfitting - consider freezing more layers.
 
 Batch normalization layers: if batch size is small, freeze the batch norm parameters (use them in inference mode) to prevent noisy statistics from destabilizing the pretrained statistics.
 
@@ -61,13 +61,13 @@ The lower layers are highly transferable across tasks. Even when target domains 
 
 EXAMPLES OF SUCCESSFUL TRANSFER
 
-Computer vision to medical imaging: Models pretrained on ImageNet have achieved state-of-the-art on X-ray classification, skin lesion detection, and diabetic retinopathy grading — despite the visual domain difference.
+Computer vision to medical imaging: Models pretrained on ImageNet have achieved state-of-the-art on X-ray classification, skin lesion detection, and diabetic retinopathy grading - despite the visual domain difference.
 
-NLP analogy: BERT and GPT are exactly transfer learning for NLP — pretrained on massive text corpora, fine-tuned for specific downstream tasks. The analogy is direct: frozen early layers = frozen lower transformer layers.
+NLP analogy: BERT and GPT are exactly transfer learning for NLP - pretrained on massive text corpora, fine-tuned for specific downstream tasks. The analogy is direct: frozen early layers = frozen lower transformer layers.
 
 WHEN NOT TO TRANSFER
 
-If your dataset is very large (millions of examples) and sufficiently different from the pretraining domain, training from scratch might match or beat fine-tuning. The cost of pretraining is amortized across all downstream uses — if you only care about one task with lots of data, it may not be worth it.
+If your dataset is very large (millions of examples) and sufficiently different from the pretraining domain, training from scratch might match or beat fine-tuning. The cost of pretraining is amortized across all downstream uses - if you only care about one task with lots of data, it may not be worth it.
 
 RESOURCES
 

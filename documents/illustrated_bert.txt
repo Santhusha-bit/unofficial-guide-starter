@@ -1,4 +1,4 @@
-SOURCE: Jay Alammar — "The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)"
+SOURCE: Jay Alammar - "The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)"
 URL: https://jalammar.github.io/illustrated-bert/
 DATE: December 3, 2018
 
@@ -6,17 +6,17 @@ DATE: December 3, 2018
 
 The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)
 
-The year 2018 marked a pivotal moment for natural language processing. The community developed powerful, freely-available components — pretrained models — that could be downloaded and integrated into existing models. Some called it "NLP's ImageNet moment."
+The year 2018 marked a pivotal moment for natural language processing. The community developed powerful, freely-available components - pretrained models - that could be downloaded and integrated into existing models. Some called it "NLP's ImageNet moment."
 
 THE EVOLUTION OF NLP: FROM WORD2VEC TO BERT
 
 Word2Vec and GloVe (Static Embeddings)
 
-Traditional embeddings assigned fixed representations to words regardless of context. "Stick" had one representation whether used as a noun ("a stick") or a verb ("stick it to the wall") or in a phrase ("stick figure"). These embeddings are looked up from a table — one vector per word, always the same.
+Traditional embeddings assigned fixed representations to words regardless of context. "Stick" had one representation whether used as a noun ("a stick") or a verb ("stick it to the wall") or in a phrase ("stick figure"). These embeddings are looked up from a table - one vector per word, always the same.
 
 ELMo (2018): Contextualized Word Embeddings
 
-ELMo (Embeddings from Language Models) recognized that context matters and created contextualized embeddings by examining entire sentences before assigning word representations. Key innovation: use a bidirectional LSTM trained on language modeling — predict the next word going forward AND predict the previous word going backward. The embeddings from both directions are concatenated.
+ELMo (Embeddings from Language Models) recognized that context matters and created contextualized embeddings by examining entire sentences before assigning word representations. Key innovation: use a bidirectional LSTM trained on language modeling - predict the next word going forward AND predict the previous word going backward. The embeddings from both directions are concatenated.
 
 Result: the word "bank" in "river bank" gets a different vector than "bank" in "bank account." This solved a fundamental limitation of Word2Vec.
 
@@ -26,7 +26,7 @@ Howard and Ruder showed that language models could be fine-tuned effectively for
 
 OpenAI GPT: Transformer-Based Language Model
 
-Rather than using the full Transformer, OpenAI used only the decoder stack for language modeling. Trained on BooksCorpus (7,000 books), the 12-layer model learned to predict subsequent words — a forward-only (unidirectional) language model. Then fine-tuned on specific tasks.
+Rather than using the full Transformer, OpenAI used only the decoder stack for language modeling. Trained on BooksCorpus (7,000 books), the 12-layer model learned to predict subsequent words - a forward-only (unidirectional) language model. Then fine-tuned on specific tasks.
 
 Limitation: only left context. When processing a word, the model can only see what came before it.
 
@@ -39,21 +39,21 @@ Google's BERT solved the bidirectionality problem. Instead of predicting the nex
 2. Next Sentence Prediction (NSP): Given two sentences A and B, predict whether B actually follows A in the source text. This teaches the model sentence-level relationships.
 
 Two versions:
-- BERT Base: 12 encoder layers, 768 hidden size, 12 attention heads — 110M parameters
-- BERT Large: 24 encoder layers, 1024 hidden size, 16 attention heads — 340M parameters
+- BERT Base: 12 encoder layers, 768 hidden size, 12 attention heads - 110M parameters
+- BERT Large: 24 encoder layers, 1024 hidden size, 16 attention heads - 340M parameters
 
 BERT AS A TWO-STEP PROCESS
 
-Step 1 — Pretraining: Train on unannotated data using MLM and NSP objectives. BERT was pretrained on BookCorpus (800M words) + English Wikipedia (2.5B words).
+Step 1 - Pretraining: Train on unannotated data using MLM and NSP objectives. BERT was pretrained on BookCorpus (800M words) + English Wikipedia (2.5B words).
 
-Step 2 — Fine-tuning: Download pretrained model, add a small task-specific layer, fine-tune on your labeled dataset. Users concentrate solely on the downstream task, not pretraining.
+Step 2 - Fine-tuning: Download pretrained model, add a small task-specific layer, fine-tune on your labeled dataset. Users concentrate solely on the downstream task, not pretraining.
 
 HOW BERT IS USED
 
 Sentence Classification (e.g., spam detection, sentiment analysis):
 - Prepend a special [CLS] token to the input
-- Feed through BERT — outputs a 768-dimensional vector for every token
-- Only use the [CLS] token's output vector — it represents the whole sequence
+- Feed through BERT - outputs a 768-dimensional vector for every token
+- Only use the [CLS] token's output vector - it represents the whole sequence
 - Train a simple linear classifier on top of this vector
 
 Named Entity Recognition:
@@ -68,7 +68,7 @@ BERT AS A FEATURE EXTRACTOR
 
 Like ELMo, BERT can also be used without fine-tuning. Extract the hidden states from BERT layers and use them as features in other models. Useful when you can't modify the pretrained weights (e.g., limited compute).
 
-Research shows that different layers capture different types of information — syntax in lower layers, semantics in higher layers.
+Research shows that different layers capture different types of information - syntax in lower layers, semantics in higher layers.
 
 INPUT REPRESENTATION
 
@@ -91,7 +91,7 @@ BERT's successors:
 - DistilBERT: BERT distilled to 40% smaller, 60% faster, retaining 97% of performance
 - ALBERT: Parameter-efficient BERT through weight sharing
 - GPT-2/3/4: Scaled up GPT's unidirectional approach massively
-- T5: Unified text-to-text framework — every task framed as generating text
+- T5: Unified text-to-text framework - every task framed as generating text
 - ELECTRA: More efficient pretraining using a discriminator instead of masked LM
 
 Getting started:

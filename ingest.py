@@ -1,5 +1,5 @@
 """
-Milestone 3 — Document ingestion and chunking.
+Milestone 3 - Document ingestion and chunking.
 """
 from pathlib import Path
 
