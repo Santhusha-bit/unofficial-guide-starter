@@ -1,0 +1,113 @@
+SOURCE: Chip Huyen — "Career Advice for Recent Computer Science Graduates"
+URL: https://huyenchip.com/2018/10/08/career-advice-recent-cs-graduates.html
+DATE: October 8, 2018
+
+---
+
+Career Advice for Recent Computer Science Graduates
+
+Ever since graduation, people have been asking me: "What's now?" School did little to prepare me for the post-school world. The academic environment provides continual feedback — you go off track a little and somebody is sure to let you know. In the real world, you can make a series of wrong decisions and nobody will tell you until it's too late.
+
+For many recent grads with CS degrees, the question is less about "what job can I get" and more about "what job should I get." I spent the last year bothering many people in industry and academia with these questions, and I've been lucky that some of them were kind enough to share their insights.
+
+PHD OR NO PHD
+
+I quickly realized that "PhD or no PhD" is a topic that everyone seemed to have an opinion on. 100% of the professors I talked to (those who already did their PhDs) told me I should do a PhD, and 100% of the people in industry told me I should not.
+
+Arguments supporting PhD include:
+- You'll have time to immerse yourself in research
+- If you want to become a professor, you have to do a PhD
+- Many top research labs such as DeepMind only interview PhD candidates
+- You won't be too poor as AI internships pay well
+
+Arguments supporting no-PhD include:
+- There should be more people joining industry to bring research into production
+- By the time you finish your PhD, what you learn might no longer be relevant
+- Many professors have side gigs in the industry so you can still work with them
+- You won't be poor for the next five years
+
+I eventually realized that I wanted to do a PhD not because I wanted to do AI research, but because I wanted to be the person who did AI research. If you don't share the passion that PhD students seem to have for talking about AI every waking moment, that's a sign the PhD path might not be right for you.
+
+Key insight: At least for AI, the line between industry and academia is getting blurrier and blurrier. Don't fret about PhD or no PhD. You can always start your PhD and then drop out, or apply for a PhD after a few years in industry.
+
+BIG COMPANIES OR STARTUPS
+
+Among my friends who chose not to do PhD:
+- About 40% went to big companies
+- 40% worked for startups
+- The rest started their own companies
+
+Two pieces of advice I found helpful:
+
+1. "Which one gives you a once-in-a-lifetime opportunity?" Do you believe that the startup you're considering is working on something truly important? Or do you believe that working for a tech giant is your once-in-a-lifetime opportunity?
+
+2. "What are you optimizing for?" Some optimize for money, new experiences, prestige, or personal growth. At this stage in my life, I optimize for personal growth — a job that gives me the most freedom to grow, work with great colleagues/mentors, and challenge myself.
+
+SHOULD I DO MY OWN STARTUP?
+
+I have more than once been tempted by the idea of building something from scratch. But I've seen enough of my friends to know that the startup life is stressful and cut-throat. I wouldn't start my own company until I've got at least three things:
+1. A problem I want to dedicate my life to solve
+2. A belief that I can solve it
+3. A co-founder I can work with for an extended period of time
+
+Working for someone else for a few years will much better prepare you, both finance-wise and skill-wise.
+
+GENERAL ADVICE (THE PRACTICAL LIST)
+
+1. Know what you're optimizing for: money, new experiences, prestige, personal growth, or something else?
+
+2. If you don't know what you want to do, pay attention to what you do in your free time. It's what you do when nobody is watching that shows your true interests.
+
+3. At least for AI, the line between industry and academia is getting blurrier. Don't fret about PhD or no PhD.
+
+4. Publish your code on GitHub and invest time to build decent GitHub repos. Many companies have offered jobs because they were impressed with GitHub profiles.
+
+5. Don't freak out about your GPA. If you think it's low (< 3.3), just don't put it on your resume. As long as you have a decent technical background (past internships + side projects + GitHub), nobody cares about GPA.
+
+6. During college, intern at both big companies and startups to get a sense of what kind of organization you want to join.
+
+7. The easiest kind of offer you can aim for is an intern-to-full-time conversion offer. The intern interview process can be 3x easier than a full-time interview process.
+
+8. Start your job search early, preferably at the beginning of your senior year. Most friends get their full-time offers 2-3 quarters in advance.
+
+9. Don't give up just because you haven't heard back from some companies. Some people sent their resumes to hundreds of companies until they got a job.
+
+10. Technical interviews are a pain. Prepare for them at least a month in advance.
+
+11. During interviews, ask about the kind of tasks you'll do in the role, the manager you'll report to, and the mentorship you'll get.
+
+12. Don't shy away from negotiation. You have every right to be paid your worth.
+
+13. Companies almost always match offers. Two people with similar experience joining the same company for the same role can get $50k difference because one had a competitive offer.
+
+14. Ask people you admire for their experiences and career advice.
+
+15. Read Glassdoor reviews to get a sense of what you're getting into.
+
+16. Take some time off between college and your first full-time job.
+
+17. If the only reason you stay in a job is the pay, leave.
+
+18. If you don't find yourself learning in a job, leave.
+
+19. Resist the rat race.
+
+20. Stop comparing yourself to other people. No matter how good you are, there will always be someone better at something. Compare yourself today with yourself yesterday.
+
+21. Be nice.
+
+22. Be kind to yourself. You don't have to graduate at xx, get a PhD when you're xx, or become a millionaire when you're xx. Discover the world. Get to know yourself. Enjoy the process.
+
+ON CHOOSING NVIDIA (AND LESSONS FOR CHOOSING ANY COMPANY)
+
+Key factors I used when choosing where to work full-time:
+
+The culture: Look for companies where the culture fits your working style. NVIDIA's "speed of light" (SOL) tenet — you have to move fast, much faster than a regular big organization — matched how I wanted to work. Look at how flat the hierarchy is and whether you can reach people across the company.
+
+The work: Can you choose what you work on? Are you the owner of projects or just a small piece? Can you work across teams?
+
+The impact: Does management share strategy with you? Can you make a difference? Will your work get attention?
+
+The opportunity: Is this a once-in-a-lifetime opportunity? Are you in a position to learn things you couldn't learn elsewhere?
+
+Youth is too precious to be sold purely for money. If you optimize for personal growth, you will eventually develop skills desirable enough to make more money than you care to spend.

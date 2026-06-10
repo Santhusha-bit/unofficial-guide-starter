@@ -1,0 +1,97 @@
+SOURCE: Chip Huyen — "What I Learned from Looking at 200 Machine Learning Tools"
+URL: https://huyenchip.com/2020/06/22/mlops.html
+DATE: June 22, 2020
+
+---
+
+What I Learned from Looking at 200 Machine Learning Tools
+
+This post examines approximately 200 AI/ML tools to understand the production ML landscape. Tools are categorized across the ML workflow: data pipeline, modeling & training, serving, and infrastructure.
+
+HISTORICAL TIMELINE OF ML TOOLING
+
+Pre-2012 (Pre-AlexNet Era): Dominated by modeling and training tools like scikit-learn and Theano. Notable survivors include Spark and Kafka. The focus was on model development, not deployment.
+
+2012-2015 (Development Phase): As machine learning adoption accelerated, data pipeline tools proliferated. In 2015, 57% of tools (47 out of 82) were data pipeline tools. Focus shifted toward handling massive datasets.
+
+2016-Present (Production Phase): Following Google's neural machine translation announcement, serving and deployment tools expanded significantly. The field evolved beyond research toward practical applications at scale.
+
+MARKET UNDERDEVELOPMENT
+
+The MLOps tooling ecosystem remains surprisingly limited compared to traditional software engineering. "If you want testing for machine learning models, there's none." Among Forbes' 50 most promising AI startups in 2019, only 7 focused on tooling rather than applications.
+
+This is a huge opportunity. Good ML engineers who can put models into production are rarer and more valuable than good ML researchers.
+
+CORE CHALLENGES REQUIRING TOOLS
+
+Monitoring: Detecting data distribution shifts after deployment. Models degrade silently — yesterday's good model can be today's terrible model if the data distribution changes.
+
+Data Labeling: Quick annotation and re-labeling workflows. Most ML projects spend 60-80% of time on data, not modeling.
+
+CI/CD Testing: Rapid model validation without extended retraining. How do you know if a new model is better before replacing the production one?
+
+Deployment: Packaging models and managing model replacement with zero downtime.
+
+Model Compression: Fitting models onto consumer devices (mobile phones, IoT devices). A model that runs in 2 seconds on a GPU server might take 10 minutes on a phone.
+
+Inference Optimization: Accelerating prediction speed for real-time applications.
+
+Edge Devices: Specialized hardware like Apple Neural Engine, Qualcomm AI, NVIDIA Jetson.
+
+Privacy: GDPR compliance and federated learning (training on device without centralizing data).
+
+OPEN SOURCE LANDSCAPE
+
+Approximately 54% (109 of 202) of tools analyzed were open-source. However, "OSS means neither non-profit nor free." Companies maintain OSS projects strategically:
+- Google: promotes cloud adoption (TensorFlow → GCP)
+- NVIDIA: sells GPUs (CUDA ecosystem)
+- Databricks: monetizes premium features built on open-source Spark
+
+Understanding this helps you evaluate tools: an OSS tool backed by a cloud provider may push you toward that cloud.
+
+KEY TOOL CATEGORIES
+
+Data pipeline tools:
+- Data collection and versioning (DVC, Pachyderm)
+- Feature stores (Feast, Tecton)
+- Data labeling (Label Studio, Scale AI, Labelbox)
+- Data validation (Great Expectations, TFDV)
+
+Modeling & training tools:
+- Experiment tracking (MLflow, Weights & Biases, Neptune)
+- Hyperparameter optimization (Optuna, Ray Tune, Hyperopt)
+- Distributed training (Horovod, Ray)
+
+Model serving tools:
+- Model servers (TorchServe, TensorFlow Serving, Triton Inference Server)
+- Model packaging (BentoML, MLflow Models)
+- A/B testing frameworks
+
+Monitoring tools:
+- Data drift detection (Evidently, WhyLogs)
+- Model performance monitoring (Seldon, Arize)
+
+PRACTICAL ADVICE FOR ML PRACTITIONERS
+
+"If you have to choose between engineering and ML, choose engineering." Strong engineering foundations enable ML expertise acquisition more readily than the reverse.
+
+The production gap is real: most ML courses teach you to train models. They do not teach you to serve them reliably at scale, monitor them for drift, retrain them on new data, version them, roll them back when they break, or A/B test between them. These are the skills that make you valuable in industry.
+
+Technical debt in ML: ML systems have all the usual software technical debt, plus ML-specific debt: data dependencies, pipeline jungles, unstable data-model boundaries, and feedback loops that can corrupt training data.
+
+The MLOps maturity spectrum:
+Level 0 — Manual: data scientists train models in notebooks, engineers manually deploy them. No automation, no monitoring. Common at early-stage startups.
+Level 1 — ML Pipeline Automation: automated retraining when new data arrives. Continuous model validation.
+Level 2 — CI/CD Pipelines: automated build, test, and deploy of the entire pipeline. Rare, even at large companies.
+
+WHAT RECRUITERS LOOK FOR IN PRODUCTION ML ROLES
+
+Beyond model accuracy metrics, production ML engineers are expected to understand:
+- How to version datasets and models (not just code)
+- How to detect and respond to data drift
+- How to run A/B tests and canary deployments for models
+- How to set up monitoring and alerting for model performance
+- How to containerize and deploy models (Docker, Kubernetes)
+- How to design feature stores for consistent train/serve feature computation
+
+The gap between "I trained a model with 95% accuracy" and "I run a model in production" is enormous, and the people who can bridge it command significant salary premiums.

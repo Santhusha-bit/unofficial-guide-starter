@@ -1,0 +1,121 @@
+SOURCE: Andrej Karpathy — "A Survival Guide to a PhD"
+URL: https://karpathy.github.io/2016/09/07/phd/
+DATE: September 7, 2016
+
+---
+
+A Survival Guide to a PhD
+
+This guide is patterned after my "Doing well in your courses", a post I wrote a long time ago on some of the tips/tricks I've developed during my undergrad. Unlike the undergraduate guide, this one was much more difficult to write because there is significantly more variation in how one can traverse the PhD experience. Many things are likely contentious and a good fraction will be specific to what I'm familiar with (Computer Science / Machine Learning / Computer Vision research).
+
+PRELIMINARIES
+
+First, should you want to get a PhD? Ask yourself if you find the following properties appealing:
+
+Freedom. A PhD will offer you a lot of freedom in the topics you wish to pursue and learn about. You're in charge.
+
+Ownership. The research you produce will be yours as an individual. Your accomplishments will have your name attached to them.
+
+Exclusivity. There are very few people who make it to the top PhD programs.
+
+Status. Working towards and eventually getting a PhD degree is culturally revered and recognized as an impressive achievement.
+
+Personal freedom. As a PhD student you're your own boss. All that matters is your final output.
+
+Maximizing future choice. Joining a PhD program doesn't close any doors or eliminate future employment/lifestyle options. You can go one way (PhD -> anywhere else) but not the other.
+
+Maximizing variance. You're young and there's really no need to rush. Once you graduate from a PhD you can spend the next ~50 years of your life in some company.
+
+Personal growth. PhD is an intense experience of rapid growth and personal self-discovery. PhD programs offer a high density of exceptionally bright people who will become your best friends forever.
+
+Expertise. PhD is probably your only opportunity in life to really drill deep into a topic and become a recognized leading expert in the world at something.
+
+The disclaimer. You will inevitably find yourself working very hard (especially before paper deadlines). You need to be okay with the suffering and have enough mental stamina and determination to deal with the pressure. You'll sit exhausted and alone in the lab on a beautiful, sunny Saturday scrolling through Facebook pictures of your friends having fun on exotic trips, paid for by their 5-10x larger salaries. You'll experience identity crises during which you'll question your life decisions.
+
+Getting into a PhD program: references, references, references. By far most important component are strong reference letters. The ideal scenario is that a well-known professor writes you a letter along the lines of "Blah is in top 5 of students I've ever worked with." A research publication from a summer research program is a very strong bonus, but not absolutely required. Grades are quite irrelevant but you generally don't want them to be too low.
+
+Picking the school. Your dream school should: 1) be a top school (because of feedback loops; top schools attract other top people), 2) have a few potential advisers you would want to work with, and 3) be in a good environment physically. You will spend 5+ years of your really good years living near the school campus.
+
+ADVISER
+
+Student adviser relationship. The adviser is an extremely important person who will exercise a lot of influence over your PhD experience. The adviser-student relationship is a symbiosis — you have your own goals, but they also have their own goals, constraints and they're building their own career. It is very helpful to understand your adviser's incentive structures: how the tenure process works, how they are evaluated, how they get funding.
+
+Pre-vs-post tenure. Younger faculty members will usually be around more and will usually be more hands-on. More senior faculty members may have larger labs and tend to have many other commitments (committees, talks, travel), which means they stay on a higher level of abstraction.
+
+Finding an adviser. The student-adviser relationship is sometimes referred to as a marriage. Talk to their students. If you want to get actual information this shouldn't be done in a very formal way. Ask specific questions: "how often do you meet?", "how hands on are they?"
+
+Impressing an adviser. The ideal student from their perspective is someone with interest and passion, someone who doesn't need too much hand-holding, someone who takes initiative — who shows up a week later having done not just what the adviser suggested, but who went beyond it.
+
+Consider the entire lab. You'll be seeing your adviser maybe once a week but you'll be seeing most of their students every single day. The postdocs are professors-in-training and they will likely be eager to work with you as they are trying to gain advising experience.
+
+RESEARCH TOPICS
+
+An exercise in the outer loop. A PhD is simultaneously a fun and frustrating experience because you're constantly operating on a meta problem level. You spend most of your time on the outer loop, figuring out what problems are worth solving and what problems are ripe for solving.
+
+Developing taste. When it comes to choosing problems you'll hear academics talk about a mystical sense of "taste". It's a real thing. When you pitch a potential problem to your adviser you'll either see their face contort or sense excitement in their eyes. In that split second happens an evaluation of the problem's importance, difficulty, sexiness, and historical context.
+
+A fertile ground. During your PhD you will dive deeply into one area and your papers will very likely chain on top of each other to create a body of work (which becomes your thesis). Always be thinking several steps ahead.
+
+Be ambitious: the sublinear scaling of hardness. A 10x more important problem is at most 2-3x harder to achieve. Thinking 10x forces you out of the box, to confront the real limitations of an approach, to think from first principles.
+
+Ambitious but with an attack. There are plenty of important problems that don't make great projects. "Important problem" must be phrased carefully. It's not the consequence that makes a problem important, it is that you have a reasonable attack.
+
+The person who did X. Ultimately, the goal of a PhD is to not only develop a deep expertise in a field but to also make your mark upon it. You want people to say things like "she's the person who did X."
+
+Valuable skills. Recognize that during your PhD you will become an expert at the area of your choosing. Imagine yourself 5 years later being a world expert in this area. Are these skills exciting or potentially valuable to your future endeavors?
+
+Negative examples. You'll sometimes hear academics talk about "incremental work" — the worst adjective in academia. Incremental work enhances something existing by making it more complex and gets 2% extra on some benchmark. These papers won't go on to be highly cited.
+
+Case study: my thesis. My entire thesis is based on work I did in the last 1.5 years of my PhD. It took me quite a long time to find a problem that I felt very excited to work on. Then at one point in my 3rd year I randomly stopped by Richard Socher's office on some Saturday at 2am and realized that some of his work on images and language was getting at something very interesting.
+
+Resistance. Your adviser is by no means infallible. If you feel strongly during your PhD you should have the courage to sometimes ignore your adviser.
+
+Don't play the game. Think of a PhD as more than just a sequence of papers. You're a member of a research community and your goal is to push the field forward. Think for yourself and from first principles. Do things others don't do but should. Step off the treadmill that has been put before you.
+
+WRITING PAPERS
+
+Writing good papers is an essential survival skill of an academic.
+
+Review papers. If you're trying to learn to write better papers, the best strategy is to also have exposure to a large number of bad papers, which you get by reviewing papers. You'll read through a bad paper and learn to avoid the same pitfalls in your own papers.
+
+Get the gestalt right. Papers, as you become a more senior researcher, take on a characteristic look: an introduction of ~1 page, a ~1 page related work section with good citation density, a well-designed pull figure and system figure, a technical section with some math symbols, results tables with bold numbers, and the paper has exactly 8 pages.
+
+Identify the core contribution. Before you start writing anything, identify the single core contribution that your paper makes to the field. A paper is not a random collection of experiments. The paper sells a single thing that was not obvious or present before.
+
+The structure. The default structure is: Intro, Related Work, Model, Experiments, Conclusions. Each paragraph should be organized around a single concrete point stated on the first sentence. A good intro flow: 1) X is an important problem, 2) The core challenges are this and that, 3) Previous work addressed these with Y but the problems are Z, 4) In this work we do W, 5) This has the following appealing properties.
+
+Common mistake: the laundry list. Avoid: "Here is the problem. First we do X, then we do Y, then we do Z." Each point should be justified, motivated, explained. Your paper is not a report — it is a highly processed and focused discussion of a problem.
+
+The language. You never "study" or "investigate" — you "develop" or "propose". You don't present a "system" or "pipeline" — you develop a "model". You don't learn "features" — you learn "representations".
+
+An internal deadline 2 weeks prior. Fei-Fei is quite adamant about an internal deadline 2 weeks before the due date in which you must submit at least a 5-page draft with all final experiments that goes through an internal review process identical to the external one.
+
+WRITING CODE
+
+Release your code. You can get away with not releasing your code, but you should commit to releasing it: it will force you to adopt better coding habits, it will force you to be more thorough, it will make others much more likely to follow up on your work (and hence lead to more citations), and it will be much more useful to everyone.
+
+Think of the future you. Make sure to document all your code very well for yourself. You will come back to your code base a few months later and feel completely lost in it.
+
+GIVING TALKS
+
+The goal of a talk. The goal of your talk is not to tell your audience what you did in your paper. The goal is to: 1) get the audience really excited about the problem, 2) teach the audience something, and 3) entertain.
+
+Do: Lots of pictures. People love pictures. Make the talk actionable. Give a live demo if possible. Develop a broader intellectual arch. Develop it into a story. Cite, cite, cite — a lot!
+
+Don't: Don't crowd your slides with text. There should be very few or no bullet points.
+
+Pitfall: the thin band between bored/confused. A common failure case is talks where you're painfully bored during the first half and completely confused during the second half, learning nothing.
+
+ATTENDING CONFERENCES
+
+Go. It's very important that you go to conferences. If your adviser lacks funds, you should be willing to pay for yourself (~$2000 for travel, accommodation, registration). You want to become part of the academic community. Each field has knowledge that doesn't get serialized into papers but is instead spread across a shared understanding of the community.
+
+The real action is in the hallways. Most relevant papers you'll see at the conference are old news. Conferences are primarily a social event. The hallway is one of the main events.
+
+It is said that there are three stages to a PhD. In the first stage you look at a related paper's reference section and you haven't read most of the papers. In the second stage you recognize all the papers. In the third stage you've shared a beer with all the first authors of all the papers.
+
+CLOSING THOUGHTS
+
+Ultimately you're trying to do good research and push the field forward. If you try to game any of the proxy metrics you won't be successful in the long run. Academia is surprisingly small and highly interconnected.
+
+Do good work, communicate it properly, people will notice and good things will happen. Have a fun ride!

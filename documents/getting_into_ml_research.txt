@@ -1,0 +1,135 @@
+SOURCE: Community-compiled guide — "Getting Into ML Research as an Undergrad or Self-Learner"
+BASED ON: r/MachineLearning discussions, fast.ai community forums, ML Collective resources, practitioner advice aggregated from multiple sources
+TOPICS: Finding research opportunities, cold-emailing, prerequisites, research vs. engineering
+
+---
+
+Getting Into ML Research as an Undergrad or Self-Learner
+
+Breaking into ML research without being in a PhD program is hard but entirely possible. This guide aggregates practical advice from students and researchers who've done it.
+
+THE MATH PREREQUISITES: WHAT YOU ACTUALLY NEED
+
+A persistent misconception: you need years of math before touching ML research. Reality: you need specific foundations, not a full math degree.
+
+Essential foundations:
+- Linear algebra: matrix multiplication, eigendecomposition, SVD, vector spaces. Resource: Gilbert Strang's lectures (freely available on MIT OpenCourseWare) or 3Blue1Brown's Essence of Linear Algebra series.
+- Calculus: chain rule (that's 80% of what backprop uses), partial derivatives, gradients. If you understand the chain rule, you understand how neural networks learn.
+- Probability and statistics: Bayes' theorem, probability distributions (Gaussian, Bernoulli, categorical), expectation, variance, maximum likelihood estimation.
+- A bit of information theory: entropy, KL divergence — these appear constantly in loss functions and information-theoretic arguments.
+
+What you don't immediately need: real analysis, measure theory, abstract algebra, topology — these matter for specific theoretical research but not for most applied ML work.
+
+Practical approach: learn math concepts as you need them. When you hit a paper with a concept you don't understand, go learn that concept. Don't try to front-load all of mathematics before touching research.
+
+PROGRAMMING FOUNDATIONS
+
+You need to be comfortable with Python and at least one deep learning framework.
+
+Python: if you're not proficient, do the fast.ai course (practical ML) which teaches coding patterns alongside ML concepts.
+
+PyTorch vs. TensorFlow: PyTorch is the default in research as of 2020+. Nearly all new papers release PyTorch code. Learn PyTorch.
+
+Essential PyTorch skills:
+- Tensor operations and autograd
+- Building models with nn.Module
+- Training loops with optimizers and loss functions
+- Loading data with DataLoader and Dataset
+- Moving computations to GPU (model.to(device), tensor.to(device))
+- Debugging with torch.autograd.detect_anomaly()
+
+GPU access: use Google Colab (free T4 GPU), Kaggle Notebooks (free, 30hr/week GPU), or AWS/GCP spot instances. You don't need a personal GPU to do research.
+
+FINDING YOUR FIRST RESEARCH OPPORTUNITY
+
+Cold-emailing professors is the most reliable path. Here's how to not get ignored:
+
+What to include in a cold email:
+1. Subject line: specific, not generic. "Interested in your work on [specific paper/topic]" beats "Research Opportunity Inquiry"
+2. First paragraph: mention a specific paper of theirs you've read and what specifically interested you. Be genuine — professors can tell when you haven't actually read the work.
+3. Second paragraph: your background briefly. GPA if high, relevant coursework, any projects.
+4. Third paragraph: what you want. "I would love to discuss potential research opportunities in your lab."
+5. Attachment: resume/CV, optionally a transcript.
+
+Length: 3-4 paragraphs maximum. Professors get hundreds of emails. Respect their time.
+
+Do: send to multiple professors (don't mention this in the email). Do: follow up once after 2 weeks if no response. Don't: ask in the first email if they have "any projects you need help with" — too generic. Don't: attach long personal statements — save that for formal applications.
+
+Template approach: Yes, you'll be emailing many professors. But customize the first paragraph for each professor — this is what gets responses. The rest can be templated.
+
+When to apply: late September/early October for spring semester research. Late January/February for summer. Professors plan funding 1-2 months ahead.
+
+RESEARCH EXPERIENCE FOR UNDERGRADUATES (REU) PROGRAMS
+
+NSF REU programs: 10-week summer research programs, usually paid stipend + housing. Highly competitive but excellent for getting research experience and letters of recommendation. Apply to 10-20 programs in October-December for the following summer. NSF REU site list is publicly available.
+
+Major lab internships:
+- Google Brain/DeepMind Research Intern: typically requires at least one publication or very strong research background
+- Microsoft Research: similar bar
+- OpenAI Research: very competitive, often via recommendation
+- Facebook/Meta AI Research: slightly more accessible
+- Industry research labs sometimes have "student researcher" positions for strong undergrads
+
+Important: even a rejection from a top lab's research intern position can be valuable — you learn what the bar is and what to work toward.
+
+BUILDING YOUR RESEARCH PROFILE WITHOUT A LAB
+
+If you can't get into a formal research position immediately:
+
+1. Implement papers: pick a paper, implement it from scratch, share the code on GitHub with notes. This demonstrates you can read and understand research. Bonus: write a blog post explaining the paper.
+
+2. Participate in ML competitions: Kaggle competitions teach applied ML. Strong Kaggle performance (top 5-10%) is noticed by some labs and companies. Machine learning competitions on platforms like DrivenData or AIcrowd often have real-world ML problems.
+
+3. Open-source contributions: contribute to PyTorch, HuggingFace Transformers, or other ML repos. This shows software engineering ability + ML knowledge.
+
+4. ML Collective: an organization specifically for independent researchers without lab affiliation. They provide mentorship, compute resources, and community for people doing research outside traditional academic structures. Worth applying if you're serious about research but don't have lab access.
+
+5. arXiv preprints: nothing stops you from writing up and posting research to arXiv. It won't have the same weight as a peer-reviewed publication, but it demonstrates initiative and ability to do research independently.
+
+RESEARCH ENGINEER VS. RESEARCH SCIENTIST: WHICH SHOULD YOU AIM FOR?
+
+Research Scientist:
+- Generates novel ideas and publishes
+- Strong publication record typically required (PhD common, sometimes strong industry track record)
+- Evaluates impact through citations, papers at top venues
+- More focused on "what's the next important question?"
+
+Research Engineer:
+- Implements, optimizes, and scales research ideas
+- Stronger software engineering skills required
+- Often works closely with research scientists
+- Evaluates impact through production metrics, engineering achievements
+- More accessible without a PhD
+
+In practice, the lines blur. At smaller organizations, research engineers do both. At top labs, the distinction is sharper.
+
+For undergrads: aiming for research engineer roles is typically more accessible and still lets you work closely with research. Many research engineers at top labs later transition to research scientist roles.
+
+GETTING LETTERS OF RECOMMENDATION
+
+PhD programs require 3+ strong letters. Start early.
+
+The best letters: "I worked closely with this student for 1 year on a research project. They are in the top 3 students I've ever worked with."
+
+How to get these letters:
+- Start research early (sophomore or junior year)
+- Demonstrate initiative — go beyond what's assigned
+- Produce something tangible (code, a paper draft, a result the professor cares about)
+- Ask for the letter at least 1 month in advance
+- Give your recommenders everything they need: your CV, your statement, the deadline, the submission link
+
+A letter from a well-known professor at a top school is worth more than a letter from an unknown professor. Plan your research experiences accordingly.
+
+COMMON QUESTIONS
+
+Q: Do I need to have read all the foundational papers before starting research?
+A: No. Read what you need for your specific project. Learn as you go. Foundational reading can happen in parallel with doing research.
+
+Q: How do I know if I'm ready to do research?
+A: You're probably ready sooner than you think. Discomfort with uncertainty is normal — it's the defining feature of research, not a sign you're not ready.
+
+Q: What if my research leads nowhere?
+A: That's research. Negative results are still results. What matters for applications is what you learned, how you worked through it, and your ability to reflect on what went wrong.
+
+Q: Should I take a research-focused grad school track or go to industry first?
+A: Both paths work. Going to industry first (2-3 years) often makes you a stronger PhD applicant — you understand what problems matter in production, you have funding if you need it, and you have perspective. The "industry → PhD" path is common and respected.

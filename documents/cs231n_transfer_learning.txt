@@ -1,0 +1,77 @@
+SOURCE: Stanford CS231n — "Transfer Learning"
+URL: https://cs231n.github.io/transfer-learning/
+COURSE: CS231n: Deep Learning for Computer Vision, Stanford University
+
+---
+
+Transfer Learning
+
+Training entire convolutional networks from scratch with random initialization is uncommon in practice because it is relatively rare to have a dataset of sufficient size. Instead, it is common to pretrain a ConvNet on a very large dataset (e.g., ImageNet with 1.2 million images and 1000 categories), and then use the ConvNet either as an initialization or a fixed feature extractor for the task of interest.
+
+THREE MAJOR TRANSFER LEARNING SCENARIOS
+
+1. ConvNet as Fixed Feature Extractor
+
+Remove the final fully-connected classification layer from a pretrained network and use the remaining layers to generate features (called "CNN codes"). For AlexNet, this produces 4096-dimensional vectors for each image. Train a linear classifier (SVM or Softmax) on these extracted features for your new dataset.
+
+The intuition: the pretrained network has learned to extract useful visual features. You don't need to retrain that — just retrain the final classifier to map those features to your new classes.
+
+2. Fine-tuning the ConvNet
+
+Replace and retrain the final classifier while continuing backpropagation through the pretrained network. You can fine-tune all layers or keep earlier layers frozen ("frozen layers") to prevent overfitting on small datasets.
+
+Why freeze early layers? Early layers capture generic features like edge detectors and color blobs — these are useful for almost any vision task. Later layers become increasingly specialized to the original dataset's classes, so those are more worth retraining.
+
+Use smaller learning rates for pretrained weights versus newly initialized layers. This preserves the learned representations while allowing adaptation.
+
+3. Pretrained Models as Starting Point
+
+Since training modern ConvNets requires 2-3 weeks across multiple GPUs, researchers share trained model checkpoints. Libraries like Caffe, PyTorch Hub, and HuggingFace maintain model repositories for community use.
+
+DECISION FRAMEWORK: WHEN TO FINE-TUNE
+
+The choice depends on two factors: (1) the size of your new dataset, and (2) its similarity to the original training data.
+
+Small dataset + Similar to original: Train only the linear classifier on top. Don't fine-tune the ConvNet — risk of overfitting.
+
+Large dataset + Similar to original: Fine-tune the entire network. More data means less overfitting risk, and the similarity means lower-level features transfer well.
+
+Small dataset + Different from original: Train classifier using features from earlier network layers. Later-layer features are too specialized for the original domain.
+
+Large dataset + Very different from original: Fine-tune the full network, or train from scratch. Enough data to learn task-specific features.
+
+PRACTICAL TIPS
+
+Use smaller learning rates when fine-tuning. A common heuristic: 10x smaller than the initial training learning rate. New classification layers get the full learning rate.
+
+Data augmentation is especially important when your dataset is small: random crops, flips, color jitter, etc.
+
+Monitor both training and validation loss carefully. If validation loss diverges from training loss early, you're overfitting — consider freezing more layers.
+
+Batch normalization layers: if batch size is small, freeze the batch norm parameters (use them in inference mode) to prevent noisy statistics from destabilizing the pretrained statistics.
+
+WHY TRANSFER LEARNING WORKS
+
+Deep networks learn hierarchical representations:
+- Layer 1-2: edges, corners, basic textures
+- Layer 3-4: object parts, patterns
+- Layer 5+: high-level semantic features, task-specific representations
+
+The lower layers are highly transferable across tasks. Even when target domains differ substantially, the low-level feature detectors learned on ImageNet provide a much better initialization than random weights.
+
+EXAMPLES OF SUCCESSFUL TRANSFER
+
+Computer vision to medical imaging: Models pretrained on ImageNet have achieved state-of-the-art on X-ray classification, skin lesion detection, and diabetic retinopathy grading — despite the visual domain difference.
+
+NLP analogy: BERT and GPT are exactly transfer learning for NLP — pretrained on massive text corpora, fine-tuned for specific downstream tasks. The analogy is direct: frozen early layers = frozen lower transformer layers.
+
+WHEN NOT TO TRANSFER
+
+If your dataset is very large (millions of examples) and sufficiently different from the pretraining domain, training from scratch might match or beat fine-tuning. The cost of pretraining is amortized across all downstream uses — if you only care about one task with lots of data, it may not be worth it.
+
+RESOURCES
+
+- Caffe Model Zoo: pretrained models for many architectures
+- PyTorch Hub: torchvision.models with pretrained=True
+- TensorFlow Hub: tf.keras.applications
+- HuggingFace Model Hub: thousands of pretrained models for NLP and vision

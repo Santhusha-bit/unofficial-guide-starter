@@ -1,0 +1,99 @@
+SOURCE: Jay Alammar — "The Illustrated Transformer"
+URL: https://jalammar.github.io/illustrated-transformer/
+DATE: June 27, 2018
+
+---
+
+The Illustrated Transformer
+
+This post builds on previous attention mechanism concepts to explain the Transformer architecture from the 2017 "Attention is All You Need" paper. The Transformer enables faster training and better parallelization than prior neural machine translation approaches. It has been featured in courses at Stanford, Harvard, MIT, Princeton, and CMU.
+
+HIGH-LEVEL ARCHITECTURE
+
+The model functions as a black box accepting input in one language and producing translated output. It consists of:
+- Encoding component (stack of encoders)
+- Decoding component (stack of decoders)
+- Connections between them
+
+Each encoder contains two sub-layers: self-attention and feed-forward networks. Decoders include these plus an encoder-decoder attention layer.
+
+TENSOR FLOW
+
+Input words convert to embedding vectors (512-dimensional). These flow through encoder layers where word position determines processing path. Self-attention creates dependencies between paths while feed-forward layers enable parallel execution.
+
+SELF-ATTENTION MECHANISM
+
+Self-attention lets the model associate words with relevant context. For example, the word "it" can be linked to "animal" in the sentence: "The animal didn't cross the street because it was too tired."
+
+The mechanism operates in steps:
+1. Create Query, Key, and Value vectors from embeddings using learned weight matrices (Wq, Wk, Wv)
+2. Calculate attention scores via dot products between the query and all keys
+3. Normalize scores by dividing by the square root of the key vector dimension (√64 = 8 for 64-dimensional keys)
+4. Apply softmax for probability distribution
+5. Multiply value vectors by softmax scores
+6. Sum weighted values for output
+
+The intuition: the query is "what I'm looking for", the key is "what I contain", and the value is "what I'll contribute if you attend to me."
+
+MATRIX CALCULATION
+
+These steps compress into matrix operations for computational efficiency, calculating all attention outputs simultaneously. The formula is:
+Attention(Q, K, V) = softmax(QK^T / √d_k) V
+
+MULTI-HEADED ATTENTION
+
+The architecture uses eight attention heads rather than single attention. Each head maintains separate Query/Key/Value weight matrices, allowing the model to focus on different positions and representation subspaces simultaneously. Outputs concatenate and pass through an additional weight matrix (W_o).
+
+This enables the model to track multiple relationships simultaneously — for example, recognizing that "it" relates to both "animal" and "tired" in different attention heads. Think of it as having eight different "perspectives" on the same sentence.
+
+POSITIONAL ENCODING
+
+Since the transformer processes all positions simultaneously (unlike RNNs which process sequentially), positional encoding vectors are added to the input embeddings to convey word order information. These follow sine and cosine patterns of different frequencies:
+
+PE(pos, 2i) = sin(pos / 10000^(2i/d_model))
+PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model))
+
+This enables the model to handle variable sequence lengths and allows the model to easily learn to attend by relative positions.
+
+RESIDUAL CONNECTIONS AND LAYER NORMALIZATION
+
+Each sub-layer includes a residual connection around it followed by layer normalization. The formula is LayerNorm(x + Sublayer(x)). This stabilizes training and helps gradients flow through deep networks. Without residual connections, very deep networks are hard to train.
+
+DECODER ARCHITECTURE
+
+The decoder processes target sequences similarly to the encoder but with two important modifications:
+
+1. Self-attention is masked: future positions are set to negative infinity before softmax, preventing the model from "cheating" by looking at future tokens during training.
+
+2. Encoder-decoder attention layer: queries come from the decoder layer below, but keys and values come from the encoder output. This allows the decoder to attend to all positions in the input sequence.
+
+The decoder generates output one word at a time. After each step, the output feeds into the next decoder step, repeating until reaching an end-of-sequence symbol.
+
+OUTPUT GENERATION
+
+A final linear layer projects decoder output to a logits vector matching vocabulary size. Softmax converts scores to probabilities, and the highest-probability word becomes the predicted output token.
+
+TRAINING PROCESS
+
+During training, model outputs compare against correct translations. The loss function (cross-entropy) measures the difference between predicted and actual probability distributions. The model learns by adjusting weights to maximize correct word probabilities at each position.
+
+DECODING STRATEGIES
+
+Greedy decoding: selects the highest-probability word at each step. Simple but can miss better overall sequences.
+
+Beam search: keeps multiple top candidates (beam width is typically 2-10), exploring paths to find better overall translations. Greedy decoding is a special case with beam width 1.
+
+WHY TRANSFORMERS REPLACED RNNS
+
+1. Parallelization: RNNs must process tokens sequentially; transformers process all tokens at once, enabling massive speedups with modern GPUs.
+2. Long-range dependencies: attention directly connects any two positions in a sequence regardless of distance, while RNNs struggle to propagate information over long sequences.
+3. Scalability: transformers scale better — more parameters + more data = better performance, leading to GPT, BERT, and beyond.
+
+LEARNING RESOURCES
+
+- Read the original "Attention Is All You Need" paper (Vaswani et al., 2017)
+- Watch Łukasz Kaiser's explanatory video
+- Experiment with Jupyter Notebooks in Tensor2Tensor
+- See the follow-up "The Illustrated BERT" for how transformers are used for NLP tasks
+
+Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

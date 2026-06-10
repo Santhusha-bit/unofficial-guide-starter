@@ -1,0 +1,162 @@
+SOURCE: Sebastian Ruder — "An Overview of Gradient Descent Optimization Algorithms"
+URL: https://www.ruder.io/optimizing-gradient-descent/
+DATE: January 19, 2016 (updated 2018)
+
+---
+
+An Overview of Gradient Descent Optimization Algorithms
+
+This comprehensive guide explores how popular gradient-based optimization algorithms work. The post aims to provide intuitions about different algorithms' behavior to help ML practitioners use them effectively.
+
+GRADIENT DESCENT VARIANTS
+
+Batch Gradient Descent
+
+Vanilla gradient descent computes gradients across the entire training dataset before updating parameters.
+Update rule: θ = θ - η · ∇_θ J(θ)
+
+This approach is slow and impractical for large datasets. It does not allow online model updating.
+
+Stochastic Gradient Descent (SGD)
+
+SGD performs a parameter update for each training example.
+Update rule: θ = θ - η · ∇_θ J(θ; x^(i); y^(i))
+
+This method is much faster and enables online learning. However, frequent updates with high variance cause the objective function to fluctuate heavily, which can help jump to better local minima but also makes convergence harder.
+
+Mini-batch Gradient Descent
+
+Performs updates on batches of n training examples.
+Update rule: θ = θ - η · ∇_θ J(θ; x^(i:i+n); y^(i:i+n))
+
+Combines benefits of both: reduces variance of parameter updates and enables efficient matrix operations in modern deep learning libraries. Typical batch sizes: 32, 64, 128, 256.
+
+KEY CHALLENGES
+
+Several obstacles complicate vanilla gradient descent:
+
+Learning rate selection: Too small causes slow convergence; too large prevents convergence or causes divergence.
+
+Learning rate schedules: Pre-defined schedules cannot adapt to dataset characteristics automatically.
+
+Sparse feature handling: The same learning rate applies to all parameters, even though sparse features may benefit from larger updates.
+
+Saddle points: Non-convex error surfaces contain saddle points (surrounded by equal-error plateaus) where gradients approach zero in all dimensions, making escape difficult.
+
+OPTIMIZATION ALGORITHMS
+
+Momentum
+
+Accelerates SGD by adding a fraction of the previous update vector to the current update.
+
+v_t = γv_{t-1} + η∇_θ J(θ)
+θ = θ - v_t
+
+With γ typically 0.9, momentum helps navigate ravines by accumulating velocity in consistent gradient directions while dampening oscillations perpendicular to the gradient. Analogy: a ball rolling down a hill, picking up speed.
+
+Nesterov Accelerated Gradient (NAG)
+
+Improves upon momentum by calculating gradients at an approximate future parameter position (a "look-ahead"):
+
+v_t = γv_{t-1} + η∇_θ J(θ - γv_{t-1})
+θ = θ - v_t
+
+This look-ahead prevents overshooting and has significantly improved performance on recurrent neural network tasks. Analogy: a ball that knows where it's going and can slow down before going uphill.
+
+Adagrad
+
+Adapts the learning rate per parameter based on historical gradients. Parameters with frequent updates receive smaller learning rates; infrequent parameters receive larger ones.
+
+θ_{t+1,i} = θ_{t,i} - (η/√(G_{t,ii} + ε)) · g_{t,i}
+
+Where G_t is a diagonal matrix containing accumulated squared gradients. Works well for sparse data (e.g., NLP tasks). Major problem: accumulated squared gradients cause learning rates to shrink continuously, eventually becoming infinitesimally small — the network stops learning.
+
+Adadelta
+
+Restricts the window of accumulated gradients using exponentially moving averages instead of summing all historical gradients:
+
+E[g²]_t = γE[g²]_{t-1} + (1-γ)g²_t
+Δθ_t = -(RMS[Δθ]_{t-1}/RMS[g]_t) · g_t
+
+Notable advantage: eliminates the need to set a global learning rate.
+
+RMSprop
+
+An unpublished method by Geoff Hinton, shares similarities with Adadelta's approach:
+
+E[g²]_t = 0.9E[g²]_{t-1} + 0.1g²_t
+θ_{t+1} = θ_t - (η/√(E[g²]_t + ε)) · g_t
+
+Divides learning rates by exponentially decaying averages of squared gradients. Recommended defaults: γ=0.9, η=0.001. Works well in non-stationary settings (RNNs).
+
+Adam (Adaptive Moment Estimation)
+
+Maintains exponentially decaying averages of both past gradients (first moment) and past squared gradients (second moment):
+
+m_t = β₁m_{t-1} + (1-β₁)g_t          (first moment: mean)
+v_t = β₂v_{t-1} + (1-β₂)g²_t          (second moment: uncentered variance)
+
+Since m_t and v_t are initialized as zeros, they are biased toward zero. Adam applies bias correction:
+
+m̂_t = m_t/(1-β₁^t)
+v̂_t = v_t/(1-β₂^t)
+
+Then updates:
+θ_{t+1} = θ_t - (η/√(v̂_t) + ε) · m̂_t
+
+Default values: β₁=0.9, β₂=0.999, ε=10^-8. Adam combines momentum benefits with adaptive learning rates effectively. Most commonly used optimizer in deep learning research.
+
+AdaMax
+
+Generalizes Adam to the ℓ∞ norm. Replaces squared gradient accumulation with the element-wise maximum of past squared gradients:
+
+u_t = max(β₂·v_{t-1}, |g_t|)
+θ_{t+1} = θ_t - (η/u_t) · m̂_t
+
+More stable than Adam in some settings.
+
+Nadam
+
+Combines Nesterov momentum with Adam — provides look-ahead benefits while maintaining adaptive learning rates.
+
+AMSGrad
+
+Addresses cases where Adam fails to converge by using the maximum of all past squared gradients instead of the exponentially weighted average. Guarantees non-increasing step sizes.
+
+OPTIMIZER COMPARISON
+
+Visual comparisons show:
+- On contoured loss surfaces: adaptive methods (Adagrad, RMSprop, Adam) quickly converge toward minima
+- Momentum and NAG oscillate initially but correct course through anticipatory updates
+- At saddle points: adaptive methods escape quickly while vanilla SGD struggles
+
+PRACTICAL RECOMMENDATIONS
+
+For sparse data: Use adaptive learning rate methods (Adagrad, Adadelta, RMSprop, Adam). They eliminate the need for manual learning rate tuning.
+
+General summary:
+- RMSprop extends Adagrad by addressing the diminishing learning rate problem
+- Adadelta differs from RMSprop by using parameter update RMS in the numerator (units match)
+- Adam adds bias-correction and momentum to RMSprop
+
+Overall recommendation: "Adam might be the best overall choice" for most deep learning scenarios. However, vanilla SGD with learning rate scheduling remains competitive for some architectures, especially when you have time to tune it.
+
+ADDITIONAL STRATEGIES
+
+Shuffling and Curriculum Learning: Shuffle training data each epoch to avoid learning from ordering biases. Curriculum learning deliberately orders examples by difficulty.
+
+Batch Normalization: Normalizes activations for each mini-batch, enabling higher learning rates, reduced initialization sensitivity, and acting as a regularizer. Reduces internal covariate shift.
+
+Early Stopping: Monitor validation error and stop when improvements plateau. As Geoff Hinton called it: "beautiful free lunch."
+
+Gradient Noise: Add Gaussian noise N(0, σ²_t) to gradients during training. Helps networks escape poor initializations and find better local minima in deep models. Anneal variance over time.
+
+DISTRIBUTED SGD
+
+Hogwild!: Enables lock-free parallel SGD updates on shared memory. Works for sparse data.
+
+Downpour SGD (Google): Multiple model replicas on training data subsets; updates go to parameter servers.
+
+TensorFlow: Splits computation across devices with Send/Receive nodes.
+
+Elastic Averaging SGD (EASGD): Links worker parameters with elastic forces to a center variable, allowing greater exploration.

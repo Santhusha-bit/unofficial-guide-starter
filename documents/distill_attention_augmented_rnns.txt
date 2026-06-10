@@ -1,0 +1,89 @@
+SOURCE: Chris Olah & Shan Carter — "Attention and Augmented Recurrent Neural Networks"
+URL: https://distill.pub/2016/augmented-rnns/
+JOURNAL: Distill, 2016
+
+---
+
+Attention and Augmented Recurrent Neural Networks
+
+This article explores how recurrent neural networks can be enhanced through augmentation techniques, with attention serving as a fundamental mechanism underlying multiple approaches.
+
+CORE CONCEPTS: RECURRENT NEURAL NETWORKS
+
+RNNs process sequential data like text, audio, and video by applying the same cell repeatedly across time steps. Long Short-Term Memory (LSTM) networks address the challenge of learning patterns over longer sequences, enabling breakthroughs in translation, voice recognition, and image captioning.
+
+The fundamental challenge RNNs face: everything must be compressed into a fixed-size hidden state. This bottleneck limits what can be memorized and what relationships can be learned.
+
+FOUR KEY AUGMENTATION DIRECTIONS
+
+1. Neural Turing Machines
+
+Neural Turing Machines (NTMs) combine RNNs with external memory banks organized as arrays of vectors. Rather than reading and writing at discrete locations, they employ a differentiable approach: "every step, they read and write everywhere, just to different extents." This uses attention distributions as weighted sums across memory positions.
+
+Two attention mechanisms:
+- Content-based attention: searches through memory by similarity to a query vector
+- Location-based attention: enables relative movement and looping through memory
+
+NTMs can learn algorithmic tasks like copying sequences and mimicking lookup tables, though they struggle with more complex arithmetic operations. The key insight: make memory access differentiable so you can train it with gradient descent.
+
+2. Attentional Interfaces
+
+Attention allows neural networks to focus selectively on relevant input portions. In translation tasks, rather than compressing entire inputs into single vectors, attention lets one RNN process input while another generating output focuses on relevant words step-by-step.
+
+This mechanism generates an attention distribution through content-based scoring: "The attending RNN generates a query describing what it wants to focus on. Each item is dot-producted with the query to produce a score." Softmax over scores gives a probability distribution; the weighted sum of values is the attended output.
+
+Applications:
+- Machine translation: attend to relevant source words when generating each target word
+- Voice recognition: align acoustic frames with text characters
+- Parsing: attend to relevant words when predicting parse structure
+- Image captioning: attend to relevant image regions when generating each word
+
+The key insight: instead of reading a single memory location, read a weighted combination of all locations. This makes the operation differentiable.
+
+3. Adaptive Computation Time
+
+Standard RNNs perform identical computation per time step, creating a rigid O(n) computational bound. Adaptive Computation Time (ACT) allows variable computation per step through an attention distribution across multiple internal computation steps.
+
+A "halting neuron" produces weights determining when to stop computation. The system maintains a budget of halting weights totaling 1. This allows the network to "think longer" about hard inputs (like rare or ambiguous words) and "think less" about easy inputs.
+
+Training adds a "ponder cost" penalizing computational resource usage, encouraging efficiency.
+
+4. Neural Programmer
+
+Neural Programmers learn to generate programs solving tasks without requiring program examples — only task outputs. Operations form Unix pipe-like sequences where each operation works on prior operation outputs.
+
+The controller RNN outputs probability distributions over operations at each step. Instead of selecting discrete operations (which would be non-differentiable), all operations execute with weights matching their probabilities, with outputs averaged together. The system references constants and column names through attention-based pointer mechanisms.
+
+UNDERLYING PRINCIPLE: ATTENTION
+
+The fundamental innovation connecting all augmentation approaches is attention — making discrete choices differentiable by "taking every direction at a fork, and then merging the paths back together."
+
+Rather than:
+- Writing to memory position 3 (discrete, non-differentiable)
+
+You do:
+- Write 80% to position 3, 15% to position 2, 5% to position 4 (differentiable!)
+
+This trick enables gradient-based learning for operations that would otherwise require reinforcement learning.
+
+PRACTICAL IMPLICATIONS FOR ML PRACTITIONERS
+
+Why this matters:
+- Traditional neural networks have fixed-size "working memory" (the hidden state)
+- Augmented RNNs break this bottleneck by connecting to external structures
+- The same attention principle underlies all modern transformer architectures
+
+Limitation: Attention's computational cost grows linearly with memory size, as systems must interact with all positions. Sparse attention remains challenging when attention itself depends on memory content.
+
+Modern transformers solved this by: (1) using multi-head attention to capture multiple relationships simultaneously, (2) applying self-attention across entire sequences in parallel rather than step-by-step, (3) stacking many attention layers for hierarchical representations.
+
+IMPLEMENTATIONS
+
+Open-source implementations across frameworks:
+- Neural Turing Machines: TensorFlow, Theano, Go, Torch, Lasagne
+- Memory Networks: Torch/Matlab and Theano
+- Neural Programmer: TensorFlow
+- Adaptive Computation Time: TensorFlow
+
+Citation: Olah & Carter, "Attention and Augmented Recurrent Neural Networks," Distill, 2016.
+http://doi.org/10.23915/distill.00001

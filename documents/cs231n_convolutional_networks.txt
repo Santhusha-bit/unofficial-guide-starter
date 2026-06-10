@@ -1,0 +1,102 @@
+SOURCE: Stanford CS231n — "Convolutional Neural Networks: Architectures, Convolution / Pooling Layers"
+URL: https://cs231n.github.io/convolutional-networks/
+COURSE: CS231n: Deep Learning for Computer Vision, Stanford University
+
+---
+
+Convolutional Neural Networks: Architecture Overview
+
+Convolutional Neural Networks represent a specialized approach to processing images by encoding spatial structure directly into the network design. Unlike standard neural networks that treat inputs as flat vectors, CNNs organize neurons in three dimensions: width, height, and depth.
+
+WHY CNNS INSTEAD OF REGULAR NEURAL NETWORKS
+
+A regular neural network processing CIFAR-10 images (32x32x3 pixels) would require 3,072 weights per neuron in the first hidden layer. For larger images (224x224x3), that's 150,528 weights per neuron. Full connectivity becomes computationally prohibitive very quickly.
+
+CNNs avoid this by constraining neurons to connect only with local regions rather than all preceding neurons, exploiting the spatial structure of images.
+
+THREE KEY PROPERTIES
+
+1. Local Connectivity: Neurons connect to small receptive field regions rather than the entire input. A filter on the first layer might measure 5x5 spatially but extend through all color channels (full depth).
+
+2. Parameter Sharing: All neurons detecting a particular feature use identical weights. An edge detector should work consistently across the image — why train a separate edge detector for each pixel location? This enables dramatic parameter reduction.
+
+3. Translation Equivariance: Because of parameter sharing, if a feature moves in the input, its activation map moves correspondingly. Very useful for images where objects can appear anywhere.
+
+CORE LAYER TYPES
+
+Convolutional Layer
+
+Applies learnable filters (small spatial kernels that extend through the entire input depth) across the input volume. During forward propagation, filters slide across spatial dimensions, computing dot products at each position.
+
+Key parameters:
+- K: number of filters (depth of output volume)
+- F: filter size (spatial extent, e.g., 3 or 5)
+- S: stride (step size when sliding, typically 1 or 2)
+- P: zero-padding (zeros added around border)
+
+Output spatial size formula: (W - F + 2P)/S + 1
+
+For common use (preserve spatial size): F=3, P=1, S=1. Output size equals input size.
+
+Pooling Layer
+
+Reduces spatial dimensions progressively, controlling parameters and preventing overfitting. Most common: max pooling with 2x2 filters and stride 2, which halves the spatial dimensions and retains the maximum activation in each region.
+
+Pooling introduces no learnable parameters. It adds spatial invariance — small translations of the input don't change the pooled output much.
+
+Fully-Connected Layer
+
+Traditional neural network layers. After several CONV+POOL stages reduce the spatial dimensions, FC layers aggregate all learned features to produce final class scores.
+
+ARCHITECTURE PATTERNS
+
+Standard pattern: INPUT → [[CONV → RELU]*N → POOL?]*M → [FC → RELU]*K → FC
+
+Common values: N≤3, M controls depth of feature hierarchy, K<3.
+
+Design principles:
+- Multiple stacked CONV layers before pooling develop richer feature representations
+- Small filters (3x3) stacked multiple times outperform single large filters: two 3x3 layers have the same receptive field as one 5x5 layer but with fewer parameters and more nonlinearities
+- Stride 1 in CONV layers preserves spatial resolution; POOL handles downsampling
+
+NOTABLE ARCHITECTURES (HISTORICAL PROGRESSION)
+
+LeNet (1990s): Yann LeCun's pioneering network for handwritten digit recognition. Established the CONV → POOL → FC pattern.
+
+AlexNet (2012): Breakthrough network winning ImageNet challenge with 16% top-5 error vs 26% for competitors. Used deep stacked convolutions, ReLU activations, dropout, and data augmentation. Started the deep learning revolution.
+
+ZFNet (2013): Improved AlexNet through hyperparameter tuning — larger middle layers, smaller first-layer filters.
+
+VGGNet (2014): Demonstrated depth matters. 16-19 layers, homogeneous 3x3 convolutions throughout. Very regular, easy to understand. Required 140M parameters.
+
+GoogLeNet/Inception (2014): Introduced Inception modules reducing parameters from 60M to 4M while maintaining accuracy. Used 1x1 convolutions for dimensionality reduction.
+
+ResNet (2015): Introduced skip connections (residual connections): F(x) + x instead of just F(x). This solved the vanishing gradient problem for very deep networks (50, 101, 152 layers). Current foundation for most vision models.
+
+COMPUTATIONAL CONSIDERATIONS
+
+Memory is the primary bottleneck. Three sources:
+1. Activation volumes and gradients: Earlier layers consume most memory, stored for backpropagation
+2. Parameters and optimizer state: Network weights, gradients, momentum buffers (multiply by ~3x for storage)
+3. Miscellaneous: image batches, augmented versions
+
+When networks exceed GPU memory limits, reducing batch size is the most effective remedy.
+
+PRACTICAL ADVICE
+
+For most applications, leveraging pretrained ImageNet models through fine-tuning outperforms training from scratch. Don't reinvent the wheel — use torchvision.models or timm (PyTorch Image Models) with pretrained=True.
+
+The im2col algorithm converts convolution to matrix multiplication, enabling BLAS library optimization. Modern deep learning frameworks handle this automatically.
+
+Dilated convolutions (atrous convolutions): introduce spacing between filter elements, expanding effective receptive fields without adding parameters. Important for semantic segmentation (DeepLab) where you need large context without losing spatial resolution.
+
+1x1 convolutions: reduce or expand channel dimensions at negligible spatial cost. Used throughout modern architectures for efficiency.
+
+UNDERSTANDING WHAT CNNS LEARN
+
+Visualization techniques reveal:
+- Early layers: oriented edges, color blobs — similar to what neuroscience finds in early visual cortex (V1)
+- Middle layers: textures, patterns, object parts
+- Later layers: high-level semantic concepts — "wheel detectors", "face detectors"
+
+This hierarchy explains both why transfer learning works and why deep networks need many layers.

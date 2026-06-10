@@ -1,0 +1,164 @@
+SOURCE: Community-compiled guide — "How to Read ML Research Papers"
+BASED ON: S. Keshav's "How to Read a Paper" (2007) + ML community practice from r/MachineLearning, fast.ai forums, and practitioner blogs
+TOPICS: Paper reading strategies, finding papers, staying current with the literature
+
+---
+
+How to Read ML Research Papers
+
+Reading research papers is a skill that takes deliberate practice. Most beginners try to read papers like textbooks — front to back, every word. This is inefficient. Researchers use structured approaches that let them quickly assess relevance and extract key ideas.
+
+THE THREE-PASS METHOD (S. Keshav, 2007)
+
+The most widely-cited framework for reading papers efficiently. Read each paper in up to three passes, stopping when you have enough information for your purpose.
+
+Pass 1: The Bird's Eye View (5–10 minutes)
+
+Goal: Decide if the paper is worth reading further.
+
+Read only:
+1. Title, abstract, introduction
+2. Section and subsection headings
+3. Conclusions
+4. Skim the references
+
+After Pass 1, answer these five Cs:
+- Category: What type of paper is this? (new algorithm, analysis of existing system, experimental comparison, survey?)
+- Context: Which other papers does it relate to?
+- Correctness: Do the assumptions appear valid?
+- Contributions: What are the paper's main contributions?
+- Clarity: Is the paper well written?
+
+If the paper doesn't pass this filter, stop here. You've just saved hours.
+
+Pass 2: The Details (1–2 hours)
+
+Goal: Understand the paper's content without necessarily every proof.
+
+Read carefully, but:
+- Skip proofs and derivations on first pass
+- Pay close attention to figures, diagrams, and tables (read captions carefully)
+- Note unread references for follow-up
+- Mark anything you don't understand
+
+After Pass 2: You should be able to summarize the main points of the paper with supporting evidence. Most papers only require this level of depth.
+
+Pass 3: Virtual Re-implementation (4–5 hours, for important papers only)
+
+Goal: Understand the paper deeply enough that you could re-implement it.
+
+- Identify every assumption the authors make
+- Challenge every claim — could you have done it differently?
+- Think about how you would approach the same problem
+- Identify the paper's strong and weak points
+- Note ideas for future work
+
+After Pass 3: You should be able to reconstruct the entire paper from memory, identify implicit assumptions, and propose extensions.
+
+ADAPTED THREE-PASS METHOD FOR ML PAPERS
+
+ML papers have a specific structure. Apply the passes as follows:
+
+Pass 1 (10 minutes):
+- Read abstract carefully — ML abstracts usually state the problem, method, and key result numbers
+- Read intro and conclusion
+- Look at all figures and their captions
+- Check: What dataset? What baseline? What metric? What's the improvement?
+
+Pass 2 (1 hour):
+- Read methods section carefully — this is where the actual contribution is
+- Read experiments section — focus on ablation studies (these show what actually matters)
+- Pay attention to experimental setup: how comparable is this to your problem?
+- Read related work to understand the paper's position in the literature
+
+Pass 3 (for papers you want to implement):
+- Read the methods section again, very carefully, taking notes
+- Check if code is released (Papers With Code is your friend)
+- If code is released, read the code alongside the paper
+- Try to spot discrepancies between paper and code (these exist more often than you'd think)
+
+HOW TO FIND PAPERS
+
+Core venues for ML research:
+- NeurIPS, ICML, ICLR: top machine learning conferences (tier 1)
+- CVPR, ICCV, ECCV: computer vision
+- ACL, EMNLP, NAACL: natural language processing
+- ICLR is unique: reviews are public on OpenReview, great for learning what reviewers care about
+
+Finding papers:
+- Papers With Code (paperswithcode.com): papers ranked by implementation availability and results on benchmarks. Best for finding state-of-the-art.
+- ArXiv (arxiv.org, cs.LG / cs.CV / cs.CL): preprints. Everything important appears here first, often months before conference publication.
+- Semantic Scholar: citation graphs, finding papers that cite or are cited by papers you care about
+- Google Scholar: broad academic search, citation counts
+
+Staying organized:
+- Zotero or Mendeley: reference manager, saves PDFs, tracks what you've read
+- Connected Papers: visual graph of related papers
+- Obsidian or Notion: notes linking papers to your project ideas
+
+STAYING CURRENT WITH THE LITERATURE
+
+The problem: thousands of ML papers per week on ArXiv. You cannot read them all.
+
+Strategies used by active researchers:
+
+Twitter/X: many ML researchers share their work and commentary. Follow researchers whose work overlaps yours. Lists help organize follows. This is how most practitioners actually discover new papers.
+
+Newsletter subscriptions (curated digests):
+- The Batch (DeepLearning.AI / Andrew Ng): weekly summary of important ML news
+- Import AI (Jack Clark): weekly digest, focuses on capability and safety developments
+- TLDR AI: daily AI news digest, broad coverage
+- Sebastian Ruder's NLP Newsletter: focused on NLP research
+
+Arxiv Sanity Preserver (arxiv-sanity.com): Andrej Karpathy's tool for filtering ArXiv by your interests. Recommends papers based on papers you've liked.
+
+Lab blogs and research pages:
+- Google AI Blog (ai.googleblog.com)
+- Meta AI Research (ai.meta.com/research)
+- Microsoft Research (microsoft.com/en-us/research)
+- OpenAI Research (openai.com/research)
+- DeepMind (deepmind.com/research)
+
+Conference proceedings: accept in your calendar notifications for NeurIPS, ICML, ICLR. When papers are published, the best ones surface immediately in the community.
+
+Journal clubs: reading papers with a group 1-2x/week is one of the highest-ROI activities for getting into ML research. You get exposed to papers you wouldn't have found, and explaining papers to others deepens understanding.
+
+HOW TO DECIDE WHICH PAPERS TO READ DEEPLY
+
+Not all papers are worth a full three-pass read. Heuristics:
+
+Read fully:
+- Papers directly implementing what you're trying to build
+- Foundational papers in your sub-field (read these once, deeply)
+- Papers everyone in your lab is discussing
+
+Read at Pass 2 level:
+- Papers adjacent to your work (good for related work sections)
+- Papers from authors you follow
+
+Read at Pass 1 level only:
+- Papers from neighboring sub-fields to maintain breadth
+- Papers that seem initially relevant but turn out not to be
+
+UNDERSTANDING PAPERS YOU FIND HARD
+
+Strategies when stuck:
+1. Check if a blog post explains it (Distill.pub, Jay Alammar's blog, Lilian Weng's blog — lilianweng.github.io)
+2. Watch a video explanation (Yannic Kilcher on YouTube explains recent papers)
+3. Find a university course that covers it (Stanford's CS229, CS231n, CS224n lecture notes)
+4. Find related papers — sometimes a follow-up paper explains the original more clearly
+5. Ask in ML Discord communities (Eleuther AI, HuggingFace, fast.ai forums)
+
+When you finally understand a hard paper, write a summary for yourself. You'll forget the details — the summary is what lasts.
+
+COMMON BEGINNER MISTAKES
+
+Reading too many papers shallowly: better to read 10 papers deeply (Pass 3) than 100 papers shallowly (Pass 1 only). Deep understanding of foundational papers compounds.
+
+Skipping math: if you don't understand the math, you won't be able to spot limitations or extend the work. Build your math foundations (linear algebra, probability, calculus) before trying to deeply read theoretical ML papers.
+
+Ignoring experiments section: the experiments section is where claims are actually supported. Pay attention to what baselines are used, whether the evaluation is on standard benchmarks, and whether ablation studies support all design choices.
+
+Not reading related work: related work tells you where the paper sits in the literature and what you need to read next. Don't skip it.
+
+Only reading the abstract: the abstract tells you what the authors claim. The experiments tell you what they actually showed. These are often not the same.
